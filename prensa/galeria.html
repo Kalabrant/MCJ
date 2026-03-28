@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Prensa | María Camino a Jesús</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../js/components.js" defer></script>
+</head>
+<body style="padding-top: 100px;">
+    <app-header base-path="../"></app-header>
+    <main>
+        <section class="section-padding">
+            <div class="container slide-in-up">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--clr-primary-gold); padding-bottom: 1rem; margin-bottom: 2rem;">
+                    <h1 class="playfair-title" style="margin-bottom: 0;">Galería Fotográfica Oficial</h1>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="notas.html" class="btn-secondary" style="border-color: var(--clr-primary-blue); color: var(--clr-primary-blue);">Ver Notas de Prensa</a>
+                    </div>
+                </div>
+                
+                <p class="section-subtitle">Recursos autorizados para difusión en medios. Formatos disponibles en WebP (Baja Vistas) y JPG Alta Resolución para descarga directa.</p>
+
+                <!-- Grid de Galería -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem;">
+                    
+                    <div class="image-wrapper" style="background: var(--clr-gray-light); min-height: 250px; border-radius: 8px; position: relative;">
+                        <!-- Overlay Download -->
+                        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
+                            <a href="#" class="btn-primary" style="background: var(--clr-primary-blue);"><i data-lucide="download"></i> Descargar JPG</a>
+                        </div>
+                        <div style="padding: 1rem; position: absolute; bottom: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: white;">
+                            <p style="margin:0; font-weight:600;">Archivo 01: Procesión del Nazareno</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Placeholder de álbum externo (Flickr) -->
+                    <div class="image-wrapper" style="background: var(--clr-pale-blue); min-height: 250px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                        <i data-lucide="external-link" style="color: var(--clr-primary-blue); width: 48px; height: 48px; margin-bottom: 1rem;"></i>
+                        <h4 style="color: var(--clr-primary-blue);">Álbum Completo en Flickr</h4>
+                        <a href="#" class="btn-secondary" style="border-color: var(--clr-primary-blue); color: var(--clr-primary-blue); margin-top: 1rem;">Abrir externa</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <app-footer base-path="../"></app-footer>
+    <script src="../script.js"></script>
+</body>
+</html>

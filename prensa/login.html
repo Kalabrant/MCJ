@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso de Prensa | María Camino a Jesús</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../js/components.js" defer></script>
+</head>
+<body style="padding-top: 100px; background-color: var(--clr-gray-light);">
+    <app-header base-path="../"></app-header>
+    <main style="min-height: 70vh; display: flex; align-items: center; justify-content: center;">
+        <div class="slide-in-up" style="background: white; padding: 3rem; border-radius: 12px; box-shadow: var(--shadow-lg); max-width: 450px; width: 100%;">
+            <div class="text-center" style="margin-bottom: 2rem;">
+                <i data-lucide="lock" style="width: 48px; height: 48px; color: var(--clr-primary-blue); margin-bottom: 1rem;"></i>
+                <h2 style="font-family: var(--font-serif); color: var(--clr-primary-blue);">Acceso a Prensa</h2>
+                <p style="color: var(--clr-gray); font-size: 0.9rem;">Portal exclusivo para periodistas y directores de medios registrados.</p>
+            </div>
+
+            <form onsubmit="event.preventDefault(); window.location.href='notas.html'">
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; font-weight: 600; color: var(--clr-primary-blue); margin-bottom: 0.5rem;">Credencial (Email)</label>
+                    <input type="email" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;">
+                </div>
+                <div style="margin-bottom: 2rem;">
+                    <label style="display: block; font-weight: 600; color: var(--clr-primary-blue); margin-bottom: 0.5rem;">Contraseña</label>
+                    <input type="password" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;">
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; border: none;">Iniciar Sesión</button>
+                <div class="text-center" style="margin-top: 1.5rem;">
+                    <a href="#" style="color: var(--clr-primary-red); font-size: 0.85rem;">Solicitar credenciales de prensa</a>
+                </div>
+            </form>
+        </div>
+    </main>
+    <app-footer base-path="../"></app-footer>
+    <script src="../script.js"></script>
+</body>
+</html>

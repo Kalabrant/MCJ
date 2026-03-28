@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlas y Ponencias | María Camino a Jesús</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../js/components.js" defer></script>
+</head>
+<body style="padding-top: 100px;">
+    <app-header base-path="../"></app-header>
+    <main>
+        <section class="section-padding">
+            <div class="container text-center">
+                <div class="slide-in-up">
+                    <h1 class="playfair-title">Archivo Digital de Enseñanzas</h1>
+                    <p class="section-subtitle" style="margin-bottom: 4rem;">Accede a conferencias, homilías destacadas y pláticas formativas.</p>
+                </div>
+                
+                <div class="marcha-content mt-4 slide-in-up delay-1">
+                    <div class="marcha-card">
+                        <i data-lucide="headphones" style="width:50px; height:50px; color:var(--clr-primary-blue); margin-bottom: 1rem;"></i>
+                        <h3>Audio: Retiro de Cuaresma</h3>
+                        <p style="margin-bottom:1rem; color: var(--clr-gray); font-size: 0.9rem;">Prédica del P. Miguel (Audio MP3)</p>
+                        <audio controls style="width: 100%; margin-bottom: 1rem;">
+                            <!-- <source src="audio.mp3" type="audio/mpeg"> -->
+                        </audio>
+                    </div>
+                    
+                    <div class="marcha-card">
+                        <i data-lucide="youtube" style="width:50px; height:50px; color:#FF0000; margin-bottom: 1rem;"></i>
+                        <h3>Video: ¿Qué es la Consagración?</h3>
+                        <p style="margin-bottom:1rem; color: var(--clr-gray); font-size: 0.9rem;">Entrevista y explicación.</p>
+                        <a href="https://youtube.com/mariacaminoajesus" target="_blank" class="btn-primary" style="background-color: var(--clr-dark);"><i data-lucide="play" style="margin-right: 0.5rem; width: 18px;"></i> Ver en YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <app-footer base-path="../"></app-footer>
+    <script src="../script.js"></script>
+</body>
+</html>

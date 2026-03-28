@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virgen de Coromoto | María Camino a Jesús</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../js/components.js" defer></script>
+</head>
+<body style="padding-top: 100px; background-color: var(--clr-gray-light);">
+    <app-header base-path="../"></app-header>
+    <main>
+        <!-- Hero Automómico/Landing -->
+        <section class="section-padding text-center" style="background: linear-gradient(135deg, var(--clr-primary-gold) 0%, var(--clr-primary-blue) 100%); color: white;">
+            <div class="container slide-in-up" style="max-width: 800px;">
+                <h1 class="playfair-title" style="color: white; font-size: 3.8rem; margin-bottom: 1rem;">Nuestra Señora de Coromoto</h1>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">Patrona de Venezuela. Descubre el milagro de sus apariciones, el proceso de restauración histórica y cómo adquirir productos exclusivos de veneración.</p>
+                <a href="#comprar" class="btn-primary" style="background-color: var(--clr-pale-blue); color: var(--clr-primary-blue); font-size: 1.2rem; padding: 1rem 2rem;"><i data-lucide="shopping-bag" style="margin-right:0.5rem;"></i> Adquirir Mercancía Oficial</a>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container section-grid">
+                <div class="about-text slide-in-left">
+                    <h2>El Milagro de Guanare</h2>
+                    <p>La Virgen María se hizo presente en la historia de Venezuela dejando la sagrada reliquia en manos del cacique Coromoto. Conoce más a través de nuestros proyectos documentales.</p>
+                    <ul class="feature-list">
+                        <li><i data-lucide="video"></i> Documental de Aparición</li>
+                        <li><i data-lucide="paint-brush"></i> Proceso de Restauración</li>
+                        <li><i data-lucide="map"></i> Patrona Nacional</li>
+                    </ul>
+                </div>
+                <div class="about-image slide-in-right">
+                    <div class="image-wrapper" style="display: flex; align-items: center; justify-content: center;">
+                        <img src="../assets/coromoto-portada.webp" alt="Nuestra Señora de Coromoto" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulario Comercial / Lead Capture -->
+        <section id="comprar" class="section-padding" style="background-color: var(--clr-white);">
+            <div class="container text-center slide-in-up">
+                <h2 class="section-title">Solícita Información o Productos</h2>
+                <p class="section-subtitle">Llena el formulario para obtener precios e información sobre cómo adquirir la estatuaria restaurada, rosarios o el Documental.</p>
+                
+                <form onsubmit="event.preventDefault(); alert('Modo demostración. Aquí iría la conexión a Backend o Email.');" style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; text-align: left;">
+                    <label style="font-weight: 600; color: var(--clr-primary-blue);">Nombre Completo</label>
+                    <input type="text" required style="padding: 1rem; border: 1px solid #ddd; border-radius: 8px;">
+                    
+                    <label style="font-weight: 600; color: var(--clr-primary-blue);">Correo o WhatsApp</label>
+                    <input type="text" required style="padding: 1rem; border: 1px solid #ddd; border-radius: 8px;">
+                    
+                    <label style="font-weight: 600; color: var(--clr-primary-blue);">¿Qué producto te interesa?</label>
+                    <select style="padding: 1rem; border: 1px solid #ddd; border-radius: 8px;">
+                        <option>Documental USB/Digital</option>
+                        <option>Estatutaria (Réplica Coromoto)</option>
+                        <option>Afiliarse como Bienhechor</option>
+                    </select>
+
+                    <button type="submit" class="btn-primary" style="margin-top: 1rem; border: none;">Enviar Solicitud</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <app-footer base-path="../"></app-footer>
+    <script src="../script.js"></script>
+</body>
+</html>

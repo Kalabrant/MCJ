@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Web | María Camino a Jesús</title>
+    <meta name="description" content="Asociación Pública de Fieles María Camino a Jesús. Portal Institucional.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Web Components -->
+    <script src="js/components.js" defer></script>
+</head>
+<body>
+    <app-header base-path="./"></app-header>
+    <main>
+        <section class="hero" style="min-height: 80vh;">
+            <div class="hero-bg">
+                <img src="assets/hero.webp" alt="Portal Principal">
+                <div class="hero-overlay" style="background: linear-gradient(135deg, rgba(26,62,130,0.85) 0%, rgba(112,184,223,0.7) 100%);"></div>
+            </div>
+            <div class="hero-content fade-in-up">
+                <span style="color: var(--clr-white); font-size: 1.1rem; font-family: var(--font-sans); font-weight: 500; letter-spacing: 3px; display: block; text-transform: uppercase; margin-bottom: 1rem;">Asociación de Fieles Laicos</span>
+                <h1 class="hero-title" style="margin-top: 0; margin-bottom: 0;">
+                    <span>María Camino a Jesús</span>
+                </h1>
+                <span class="hero-subtitle" style="color: var(--clr-primary-gold); margin-top: -1.5rem; display: block; position: relative;">Desde 1992, al servicio de la Iglesia</span>
+                <p class="hero-description">Te damos la bienvenida. Explora nuestras informativas, devocionales y descarga recursos para tu crecimiento espiritual.</p>
+            </div>
+        </section>
+
+        <!-- Gran Menú de Accesos Rápidos -->
+        <section class="section-padding" style="background-color: transparent; margin-top: -100px; position:relative; z-index: 10;">
+            <div class="container" style="max-width: 1300px;">
+                <div class="marcha-content slide-in-up delay-1" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <!-- Informativa -->
+                    <div class="marcha-card text-center" style="border-top: 5px solid var(--clr-primary-blue);">
+                        <div class="card-img-wrapper" style="margin-bottom: 1.5rem; height: 160px; overflow: hidden; border-radius: 8px;">
+                            <img src="assets/nosotros.webp" alt="Nuestra Identidad" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3>Nosotros</h3>
+                        <p style="margin-bottom: 1.5rem;">Conoce nuestra identidad, estatutos, normativas y a los Caballeros de la Misericordia.</p>
+                        <a href="informativa/quienes-somos.html" class="btn-primary" style="font-size: 0.9rem; padding: 0.6rem 1.2rem; margin-top: auto;">Ingresar</a>
+                    </div>
+                    <!-- Devocional -->
+                    <div class="marcha-card text-center" style="border-top: 5px solid var(--clr-primary-red);">
+                        <div class="card-img-wrapper" style="margin-bottom: 1.5rem; height: 160px; overflow: hidden; border-radius: 8px;">
+                            <img src="assets/jesus-misericordioso.webp" alt="Jesús Misericordioso" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3>Área Devocional</h3>
+                        <p style="margin-bottom: 1.5rem;">Profundiza sobre Jesús Misericordioso, el Rosario y el Inmaculado Corazón de María.</p>
+                        <a href="devocional/jesus-misericordioso.html" class="btn-primary" style="font-size: 0.9rem; padding: 0.6rem 1.2rem; background: var(--clr-primary-red); margin-top: auto;">Ingresar</a>
+                    </div>
+                    <!-- Obras -->
+                    <div class="marcha-card text-center" style="border-top: 5px solid var(--clr-primary-gold);">
+                        <i data-lucide="handshake" style="width:50px; height:50px; color:var(--clr-primary-gold); margin-bottom: 1rem;"></i>
+                        <h3>Obras de Apostolado</h3>
+                        <p style="margin-bottom: 1.5rem;">Descubre la Fiesta, documentales, Gracia y Misericordia y el Comedor Madre.</p>
+                        <a href="informativa/obras.html" class="btn-primary" style="font-size: 0.9rem; padding: 0.6rem 1.2rem; background: var(--clr-primary-gold); margin-top: auto;">Explorar Obras</a>
+                    </div>
+                    <!-- Recursos -->
+                    <div class="marcha-card text-center" style="border-top: 5px solid var(--clr-dark);">
+                        <i data-lucide="folder-down" style="width:50px; height:50px; color:var(--clr-dark); margin-bottom: 1rem;"></i>
+                        <h3>Recursos Pastorales</h3>
+                        <p style="margin-bottom: 1.5rem;">Guía de confesión, Tríptico, Preparación y Normativas de columbarios.</p>
+                        <a href="recursos/descargas.html" class="btn-primary" style="font-size: 0.9rem; padding: 0.6rem 1.2rem; background: var(--clr-dark); margin-top: auto;">Visualizar Recursos</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <app-footer base-path="./"></app-footer>
+    <script src="script.js"></script>
+</body>
+</html>

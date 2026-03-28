@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas de Prensa | María Camino a Jesús</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../js/components.js" defer></script>
+</head>
+<body style="padding-top: 100px;">
+    <app-header base-path="../"></app-header>
+    <main>
+        <section class="section-padding">
+            <div class="container slide-in-up">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--clr-primary-gold); padding-bottom: 1rem; margin-bottom: 2rem;">
+                    <h1 class="playfair-title" style="margin-bottom: 0;">Sala de Redacción</h1>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="galeria.html" class="btn-secondary" style="border-color: var(--clr-primary-blue); color: var(--clr-primary-blue);">Ver Galería Multimedia</a>
+                        <a href="login.html" class="btn-primary" style="background-color: var(--clr-gray);"><i data-lucide="log-out"></i> Salir</a>
+                    </div>
+                </div>
+                
+                <div class="marcha-content mt-4">
+                    <!-- Nota 1 -->
+                    <div class="marcha-card text-left" style="text-align: left;">
+                        <p style="color: var(--clr-primary-red); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;"><i data-lucide="calendar-days" style="width: 16px; height: 16px; margin-bottom:-3px;"></i> Diciembre 2026</p>
+                        <h3>Comunicado Especial de Fin de Año</h3>
+                        <p style="margin-bottom: 1.5rem; color: var(--clr-gray);">Resumen de actividades litúrgicas y resultados del Comedor Madre de la Misericordia.</p>
+                        <a href="#" style="color: var(--clr-primary-blue); font-weight: 600; text-decoration: underline;">Descargar PDF (2MB)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <app-footer base-path="../"></app-footer>
+    <script src="../script.js"></script>
+</body>
+</html>

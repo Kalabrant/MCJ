@@ -10,14 +10,9 @@ class AppHeader extends HTMLElement {
                     <span class="logo-text">María Camino a Jesús</span>
                 </a>
                 <div class="nav-links">
-                    <div style="position: relative; display: inline-block;" class="dropdown-wrapper">
-                        <a href="${base}informativa/quienes-somos.html">Nosotros</a>
-                    </div>
-                    <div style="position: relative; display: inline-block;" class="dropdown-wrapper">
-                        <a href="${base}devocional/jesus-misericordioso.html">Devocional</a>
-                    </div>
+                    <a href="${base}fiestamisericordia.html" class="nav-fiesta">✨ Fiesta de la Misericordia 2026</a>
+                    <a href="${base}informativa/quienes-somos.html">Nosotros</a>
                     <a href="${base}informativa/obras.html">Obras</a>
-                    <a href="${base}recursos/descargas.html">Recursos</a>
                     <a href="${base}informativa/contacto.html" class="btn-primary">Contacto</a>
                 </div>
                 <button class="mobile-menu-btn">
@@ -48,21 +43,19 @@ class AppFooter extends HTMLElement {
                 </div>
                 <div class="footer-links">
                     <h4>Navegación</h4>
+                    <a href="${base}fiestamisericordia.html" style="color: var(--clr-primary-gold); font-weight: 700;">✨ Fiesta de la Misericordia 2026</a>
                     <a href="${base}informativa/quienes-somos.html">Nosotros</a>
-                    <a href="${base}devocional/jesus-misericordioso.html">Devocional</a>
                     <a href="${base}informativa/obras.html">Obras</a>
-                    <a href="${base}recursos/descargas.html">Recursos Pastoral</a>
-                    <a href="${base}prensa/login.html">Acceso Prensa</a>
                 </div>
                 <div class="footer-contact">
-                    <h4>Atención</h4>
-                    <p><i data-lucide="clock"></i> Despacho: Lun-Vie (En construcción)</p>
-                    <p><i data-lucide="map-pin"></i> Maracaibo, Zulia, Venezuela.</p>
-                    <p><i data-lucide="mail"></i> info@mariacaminoajesus.org</p>
-                    <div class="social-links" style="margin-top: 1rem;">
-                        <a href="https://wa.me/580000000000" target="_blank" aria-label="WhatsApp" style="color: var(--clr-dark); background: var(--clr-primary-gold);"><i data-lucide="message-circle"></i></a>
-                        <a href="https://instagram.com/mariacaminoajesus" target="_blank" aria-label="Instagram" style="color: var(--clr-dark); background: var(--clr-primary-gold);"><i data-lucide="instagram"></i></a>
-                        <a href="https://youtube.com/mariacaminoajesus" target="_blank" aria-label="YouTube" style="color: var(--clr-dark); background: var(--clr-primary-gold);"><i data-lucide="youtube"></i></a>
+                    <h4>Síguenos</h4>
+                    <div class="social-links" style="margin-top: 0.5rem; flex-direction: column; gap: 0.8rem;">
+                        <a href="https://www.youtube.com/@mariacaminoajesus" target="_blank" aria-label="YouTube" style="width: auto; border-radius: 50px; padding: 0.5rem 1.2rem; gap: 0.6rem; color: var(--clr-white); background: #FF0000; justify-content: flex-start;">
+                            <i data-lucide="youtube"></i> Canal de YouTube
+                        </a>
+                        <a href="https://instagram.com/mariacaminoajesus" target="_blank" aria-label="Instagram" style="width: auto; border-radius: 50px; padding: 0.5rem 1.2rem; gap: 0.6rem; color: var(--clr-white); background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); justify-content: flex-start;">
+                            <i data-lucide="instagram"></i> Instagram Oficial
+                        </a>
                     </div>
                 </div>
             </div>

@@ -10,25 +10,333 @@
     <link rel="stylesheet" href="../style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="../js/components.js" defer></script>
+    <style>
+        .qs-hero {
+            background: linear-gradient(135deg, rgba(26,62,130,0.92) 0%, rgba(112,184,223,0.8) 100%),
+                        url('../assets/nosotros.webp') center/cover no-repeat;
+            min-height: 340px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 1rem 3rem;
+        }
+        .qs-hero h1 {
+            color: #fff;
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+        .qs-hero p {
+            color: var(--clr-primary-gold);
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .qs-section { padding: 4rem 1rem; }
+        .qs-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .qs-intro-text h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--clr-primary-blue);
+            margin-bottom: 0.5rem;
+            padding-bottom: 1rem;
+            position: relative;
+        }
+        .qs-intro-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 60px; height: 4px;
+            background: var(--clr-primary-gold);
+            border-radius: 2px;
+        }
+        .qs-intro-text p {
+            color: var(--clr-gray);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+        }
+        .qs-intro-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+        }
+        .ap-callout {
+            background: var(--clr-primary-blue);
+            color: #fff;
+            border-radius: 16px;
+            padding: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .ap-callout h3 {
+            color: var(--clr-primary-gold);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .ap-callout p { opacity: 0.9; line-height: 1.8; font-size: 1rem; }
+        .ap-callout .ap-badge {
+            display: inline-block;
+            background: var(--clr-primary-gold);
+            color: var(--clr-dark);
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            margin-top: 1.2rem;
+        }
+        .historia-section { background: var(--clr-gray-light); padding: 4rem 1rem; }
+        .historia-section .inner { max-width: 1200px; margin: 0 auto; }
+        .historia-section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--clr-primary-blue);
+            padding-bottom: 1rem;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        .historia-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 60px; height: 4px;
+            background: var(--clr-primary-gold);
+            border-radius: 2px;
+        }
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding-left: 2rem;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0; width: 3px;
+            background: linear-gradient(to bottom, var(--clr-primary-blue), var(--clr-primary-gold));
+            border-radius: 2px;
+        }
+        .timeline-item { position: relative; margin-bottom: 2.5rem; padding-left: 1.5rem; }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.55rem; top: 0.4rem;
+            width: 14px; height: 14px;
+            border-radius: 50%;
+            background: var(--clr-primary-gold);
+            border: 3px solid var(--clr-primary-blue);
+        }
+        .timeline-item .year {
+            font-weight: 700;
+            color: var(--clr-primary-blue);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+        }
+        .timeline-item p { color: var(--clr-gray); line-height: 1.7; font-size: 1rem; }
+        .espirit-section { padding: 4rem 1rem; background: #fff; }
+        .espirit-section .inner { max-width: 1200px; margin: 0 auto; }
+        .espirit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        .espirit-card {
+            background: var(--clr-gray-light);
+            border-radius: 16px;
+            padding: 2rem;
+            border-left: 5px solid var(--clr-primary-blue);
+        }
+        .espirit-card.gold { border-left-color: var(--clr-primary-gold); }
+        .espirit-card h3 {
+            font-size: 1.15rem;
+            color: var(--clr-primary-blue);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+        .espirit-card p { color: var(--clr-gray); line-height: 1.8; font-size: 0.98rem; }
+        /* Historia con imagen lateral */
+        .historia-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        .historia-img {
+            position: sticky;
+            top: 120px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        .historia-img img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            display: block;
+        }
+        .historia-img figcaption {
+            background: var(--clr-primary-blue);
+            color: var(--clr-primary-gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 0.7rem 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        /* Espiritualidad cards con imagen */
+        .espirit-card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.2rem;
+            display: block;
+        }
+        @media (max-width: 992px) {
+            .historia-layout { grid-template-columns: 1fr; }
+            .historia-img { position: static; aspect-ratio: 16/9; }
+            .historia-img img { aspect-ratio: 16/9; }
+        }
+        @media (max-width: 768px) {
+            .qs-intro-grid, .espirit-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .qs-hero h1 { font-size: 2.2rem; }
+        }
+    </style>
 </head>
-<body style="padding-top: 100px;">
+<body>
     <app-header base-path="../"></app-header>
     <main>
-        <section class="section-padding">
-            <div class="container section-grid">
-                <div class="about-text slide-in-left">
-                    <h2 class="section-title">Nuestra Identidad</h2>
-                    <p><strong>Identidad y Carisma:</strong> Somos una Asociación Pública de Fieles de la Arquidiócesis de Maracaibo, dedicada a proclamar la Divina Misericordia, promoviendo el amor filial a la Madre de Dios y la santificación.</p>
-                    <p><strong>Nuestra Historia:</strong> Nacemos en 1992 con el fuerte propósito de servir a la Iglesia y llevar consuelo espiritual en Maracaibo.</p>
-                    <p><strong>Estatutos y Normativas:</strong> Nos regimos bajo la obediencia estricta a la autoridad de nuestra Iglesia Local.</p>
+
+        <!-- Hero Banner -->
+        <div class="qs-hero fade-in-up">
+            <div>
+                <p>Arquidiócesis de Maracaibo · Venezuela</p>
+                <h1>Quiénes Somos</h1>
+            </div>
+        </div>
+
+        <!-- Identidad e Imagen -->
+        <section class="qs-section" style="background:#fff;">
+            <div class="qs-intro-grid">
+                <div class="qs-intro-text slide-in-left">
+                    <h2>Nuestra Identidad</h2>
+                    <p>
+                        Somos una <strong>Asociación Católica Pública de Fieles Laicos</strong> de la Arquidiócesis de Maracaibo, fundada el <strong>16 de junio de 1992</strong>. Buscamos ser una comunidad de amor, cimentada en la vivencia de la Palabra de Dios y los Santos Sacramentos.
+                    </p>
+                    <p>
+                        El centro de nuestra espiritualidad es el amor y la veneración de la <strong>Santa Eucaristía</strong>, por la Santísima Virgen María, el sacrificio y la oración como servicio de oblación por la santificación de los sacerdotes y la comunión con el Santo Padre.
+                    </p>
+                    <p>
+                        Formamos parte de la gran familia del <strong>Movimiento Apostólico de la Divina Misericordia</strong>, según la espiritualidad de Santa Faustina Kowalska. Estamos llamados a impetrar la Divina Misericordia para nosotros, para nuestra nación y el mundo entero.
+                    </p>
+                    <p>
+                        Esta labor la realizamos a través de la difusión de las nuevas formas de devoción a la Divina Misericordia, especialmente con la celebración de la <strong>Fiesta de la Misericordia</strong> en la Arquidiócesis de Maracaibo, y de diversas obras materiales y espirituales de la misericordia.
+                    </p>
                 </div>
-                <div class="about-image slide-in-right">
-                    <div class="image-wrapper" style="display: flex; align-items: center; justify-content: center;">
-                        <img src="../assets/nosotros.webp" alt="Nosotros - María Camino a Jesús" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <div class="qs-intro-image slide-in-right">
+                    <img src="../assets/nosotros.webp" alt="María Camino a Jesús - Comunidad">
+                </div>
+            </div>
+        </section>
+
+        <!-- Asociación Pública de Fieles -->
+        <section class="qs-section" style="background: var(--clr-gray-light);">
+            <div class="ap-callout slide-in-up">
+                <h3><i data-lucide="info" style="width:22px;height:22px;"></i> Asociación Pública de Fieles</h3>
+                <p>
+                    Una asociación pública de fieles es una asociación de fieles de la Iglesia Católica erigida para fines que por su propia naturaleza están reservados a la autoridad eclesiástica, o a los que a juicio de ésta no se provea suficientemente con la iniciativa privada. Las asociaciones públicas de fieles son siempre <strong>personas jurídicas públicas</strong>; son voceros oficiales de la Iglesia Católica.
+                </p>
+                <span class="ap-badge">Personas Jurídicas Públicas de la Iglesia</span>
+            </div>
+        </section>
+
+        <!-- Historia -->
+        <section class="historia-section">
+            <div class="inner">
+                <h2 class="slide-in-up">Nuestra Historia</h2>
+                <div class="historia-layout">
+                <div class="timeline slide-in-up delay-1">
+                    <div class="timeline-item">
+                        <div class="year">Junio de 1992</div>
+                        <p>Fundación bajo la figura de <strong>Asociación Civil</strong>, el 16 de junio, con el propósito de servir a la Iglesia y proclamar la Divina Misericordia en Maracaibo.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1996</div>
+                        <p>Inicio del trabajo de difusión de la devoción a la Divina Misericordia, incluyendo las primeras producciones audiovisuales de la Coronilla y la Novena de la Misericordia.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">13 de enero de 2001</div>
+                        <p>A invitación de Mons. Ubaldo Ramón Santana Sequera, nuevo Arzobispo de Maracaibo, comenzamos a servir en la sacristía durante la misa de toma de posesión. Inicio del discernimiento sobre el acompañamiento a los sacerdotes.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2011</div>
+                        <p>Con ocasión del 15° aniversario de la procesión de la Misericordia, y con el respaldo de Mons. Cástor Oswaldo Azuaje, Obispo Auxiliar de la Arquidiócesis, obtenemos la primera reliquia de primer grado de <strong>Santa Faustina Kowalska</strong> conferida a una comunidad en Venezuela.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2013</div>
+                        <p>Nace el encuentro <strong>"Gracia y Misericordia"</strong>, celebrado cada octubre, abierto a fieles de toda la arquidiócesis y diócesis hermanas para profundizar en la fe y venerar la reliquia de Santa Faustina.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year">12 de mayo de 2018</div>
+                        <p>Erección canónica por <strong>Mons. Ubaldo Ramón Santana Sequera</strong>, entonces Arzobispo de Maracaibo, como <strong>Asociación Católica Pública de Fieles Laicos</strong>.</p>
+                    </div>
+                </div><!-- end timeline -->
+
+                </div><!-- end historia-layout -->
+            </div>
+        </section>
+
+        <!-- Espiritualidad -->
+        <section class="espirit-section">
+            <div class="inner">
+                <h2 class="section-title text-center slide-in-up" style="margin-bottom: 0.5rem;">Nuestra Espiritualidad</h2>
+                <p class="section-subtitle">Los pilares que sostienen nuestra vida comunitaria y apostólica.</p>
+                <div class="espirit-grid">
+                    <div class="espirit-card slide-in-left">
+                        <img src="../assets/img-espiritualidad-eucaristia.jpg" alt="Eucaristía y la Virgen María" class="espirit-card-img">
+                        <h3><i data-lucide="heart" style="width:20px;height:20px;color:var(--clr-primary-blue);"></i> Eucaristía y la Virgen María</h3>
+                        <p>El amor y la veneración de la Santa Eucaristía, por la Santísima Virgen María, es el centro de nuestra espiritualidad. El sacrificio y la oración son nuestro servicio de oblación por la santificación de los sacerdotes y la comunión con el Santo Padre.</p>
+                    </div>
+                    <div class="espirit-card gold slide-in-right">
+                        <img src="../assets/img-espiritualidad-misericordia.jpg" alt="Divina Misericordia" class="espirit-card-img">
+                        <h3><i data-lucide="flame" style="width:20px;height:20px;color:var(--clr-primary-gold);"></i> Divina Misericordia · Santa Faustina</h3>
+                        <p>Formamos parte del Movimiento Apostólico de la Divina Misericordia, según la espiritualidad de Santa Faustina Kowalska. Estamos llamados a impetrar la Divina Misericordia para nosotros, nuestra nación y el mundo entero, a través de la acción, la palabra y la oración.</p>
+                    </div>
+                    <div class="espirit-card slide-in-left">
+                        <img src="../assets/img-fidelidad-iglesia.jpg" alt="Fidelidad a la Iglesia" class="espirit-card-img">
+                        <h3><i data-lucide="shield-check" style="width:20px;height:20px;color:var(--clr-primary-blue);"></i> Fidelidad a la Iglesia</h3>
+                        <p>Como Asociación Pública de Fieles, actuamos en plena comunión con la Arquidiócesis de Maracaibo y el Santo Padre, siendo voceros oficiales de la Iglesia Católica en nuestro servicio apostólico.</p>
+                    </div>
+                    <div class="espirit-card gold slide-in-right">
+                        <img src="../assets/img-santificacion-sacerdotal.jpg" alt="Santificación Sacerdotal" class="espirit-card-img">
+                        <h3><i data-lucide="users" style="width:20px;height:20px;color:var(--clr-primary-gold);"></i> Santificación Sacerdotal</h3>
+                        <p>Acompañamos a nuestros hermanos sacerdotes mediante la oración y el sacrificio continuo por su santificación, procurando que sean fieles al ministerio al cual han sido llamados, y asistiendo materialmente a los sacerdotes pobres y/o enfermos.</p>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
     <app-footer base-path="../"></app-footer>
     <script src="../script.js"></script>

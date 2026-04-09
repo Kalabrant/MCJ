@@ -10,45 +10,376 @@
     <link rel="stylesheet" href="../style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="../js/components.js" defer></script>
+    <style>
+        .obras-hero {
+            background: linear-gradient(135deg, rgba(26,62,130,0.90) 0%, rgba(240,196,61,0.7) 100%),
+                        url('../assets/hero.webp') center/cover no-repeat;
+            min-height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 1rem 3rem;
+        }
+        .obras-hero h1 {
+            color: #fff;
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+        .obras-hero p {
+            color: var(--clr-primary-gold);
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Obra block layout */
+        .obra-block {
+            padding: 5rem 1rem;
+        }
+        .obra-block:nth-child(even) {
+            background: var(--clr-gray-light);
+        }
+        .obra-block:nth-child(odd) {
+            background: #fff;
+        }
+        .obra-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        .obra-icon-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 0.3rem;
+        }
+        .obra-icon {
+            width: 64px; height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .obra-icon.blue   { background: var(--clr-primary-blue); color: #fff; }
+        .obra-icon.gold   { background: var(--clr-primary-gold); color: var(--clr-dark); }
+        .obra-icon.sky    { background: var(--clr-primary-red);  color: #fff; }
+        .obra-icon.dark   { background: var(--clr-dark);         color: #fff; }
+
+        .obra-body h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--clr-primary-blue);
+            margin-bottom: 0.4rem;
+            padding-bottom: 0.8rem;
+            position: relative;
+        }
+        .obra-body h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 50px; height: 4px;
+            background: var(--clr-primary-gold);
+            border-radius: 2px;
+        }
+        .obra-body p {
+            color: var(--clr-gray);
+            font-size: 1.02rem;
+            line-height: 1.85;
+            margin-bottom: 1.1rem;
+        }
+        .obra-body .obra-quote {
+            border-left: 4px solid var(--clr-primary-gold);
+            padding: 0.8rem 1.2rem;
+            background: rgba(240,196,61,0.08);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: var(--clr-primary-blue);
+            margin: 1.5rem 0;
+        }
+
+        /* Sub-obras (producciones) */
+        .sub-obras-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .sub-obra-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid var(--clr-primary-blue);
+            transition: var(--transition);
+        }
+        .sub-obra-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+        .sub-obra-card h3 {
+            font-size: 1.1rem;
+            color: var(--clr-primary-blue);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .sub-obra-card p {
+            color: var(--clr-gray);
+            font-size: 0.96rem;
+            line-height: 1.7;
+        }
+        .sub-obra-card a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 1rem;
+            color: var(--clr-primary-blue);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .sub-obra-card a:hover { color: var(--clr-primary-gold); }
+
+        .award-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--clr-primary-gold);
+            color: var(--clr-dark);
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            margin-top: 0.8rem;
+        }
+
+        /* Obra con imagen lateral */
+        .obra-inner.has-img {
+            grid-template-columns: 80px 1fr 360px;
+        }
+        .obra-inner.has-img.img-left {
+            grid-template-columns: 360px 80px 1fr;
+        }
+        .obra-side-img {
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            align-self: start;
+            position: sticky;
+            top: 110px;
+        }
+        .obra-side-img img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            display: block;
+        }
+        .obra-inner.has-img.img-left .obra-icon-col { order: 2; }
+        .obra-inner.has-img.img-left .obra-body    { order: 3; }
+        .obra-inner.has-img.img-left .obra-side-img { order: 1; }
+        /* Sub-obra card: thumbnail on top */
+        .sub-obra-thumb {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.2rem;
+            display: block;
+        }
+        @media (max-width: 992px) {
+            .obra-inner.has-img,
+            .obra-inner.has-img.img-left {
+                grid-template-columns: 80px 1fr;
+            }
+            .obra-side-img { display: none; }
+        }
+        @media (max-width: 768px) {
+            .obra-inner { grid-template-columns: 1fr; }
+            .obra-icon-col { flex-direction: row; justify-content: flex-start; }
+            .obras-hero h1 { font-size: 2.2rem; }
+        }
+    </style>
 </head>
-<body style="padding-top: 100px;">
+<body>
     <app-header base-path="../"></app-header>
     <main>
-        <section class="marcha section-padding">
-            <div class="container">
-                <div class="text-center slide-in-up">
-                    <h1 class="playfair-title">Obras y Apostolado</h1>
-                    <p class="section-subtitle">Conoce los frutos de nuestra vocación y servicio en la Arquidiócesis.</p>
+
+        <!-- Hero -->
+        <div class="obras-hero fade-in-up">
+            <div>
+                <p>Frutos de nuestra vocación</p>
+                <h1>Obras y Apostolado</h1>
+            </div>
+        </div>
+
+        <!-- Obra 1: Acompañamiento a Sacerdotes -->
+        <div class="obra-block">
+            <div class="obra-inner has-img">
+                <div class="obra-icon-col slide-in-left">
+                    <div class="obra-icon blue">
+                        <i data-lucide="cross" style="width:32px;height:32px;"></i>
+                    </div>
                 </div>
-                
-                <div class="marcha-content slide-in-up delay-1 mt-4">
-                    <!-- Obra 1 -->
-                    <div class="marcha-card text-center">
-                        <i data-lucide="users" style="width: 48px; height: 48px; color: var(--clr-primary-blue); margin-bottom:1rem;"></i>
-                        <h3>Fiesta de la Misericordia</h3>
-                        <p>Congregamos anualmente a miles de fieles para honrar la Divina Misericordia el segundo Domingo de Pascua.</p>
+                <div class="obra-body slide-in-right">
+                    <h2>Acompañamiento y Atención a los Sacerdotes</h2>
+                    <p>
+                        Con el nombramiento de Mons. Ubaldo Ramón Santana Sequera como Arzobispo Metropolitano de Maracaibo a finales del año 2000, fuimos invitados a servir en la sacristía atendiendo a los sacerdotes y obispos que asistieron a la misa de toma de posesión del nuevo Arzobispo el día <strong>13 de enero de 2001</strong>. A partir de este momento comenzamos un proceso de discernimiento en el cual entendimos que el Señor Jesús nos invitaba, a través de este servicio, a estar unidos a Él a través de quienes Él mismo ha llamado al sacerdocio ministerial.
+                    </p>
+                    <p>
+                        El sacerdote que actúa <em>"in persona Christi"</em> es dispensador de la misericordia Divina, que le ha sido confiada a través de su ordenación sacerdotal, recibida de manos del Obispo, sucesor de los apóstoles. Pero al mismo tiempo es un hermano, que Dios ha elegido de entre nosotros para consagrarse a su servicio, por lo cual dejándolo todo por el bien de los fieles, desgasta su vida al servicio del Señor y de su Iglesia.
+                    </p>
+                    <p>
+                        A través del tiempo hemos comprendido con mayor claridad que el Señor Jesús nos ha invitado a acompañar a nuestros hermanos sacerdotes a través de la <strong>oración y sacrificio continuo por su santificación</strong>, a fin de que sean fieles al ministerio al cual han sido llamados. Por otra parte, también deseamos acompañarles con nuestro afecto y cercanía, asistiendo y ayudando especialmente a los sacerdotes pobres y/o enfermos con sus necesidades materiales, especialmente en el ámbito de la salud y la alimentación.
+                    </p>
+                </div>
+                <figure class="obra-side-img slide-in-right">
+                    <img src="../assets/img-obra-sacerdotes.jpg" alt="Acompañamiento a Sacerdotes">
+                </figure>
+            </div>
+        </div>
+
+
+
+        <!-- Obra: Procesión de la Divina Misericordia -->
+        <div class="obra-block">
+            <div class="obra-inner has-img img-left">
+                <figure class="obra-side-img slide-in-left">
+                    <img src="../AFICHE_FIESTA_26.png" alt="Fiesta de la Misericordia 2026 - Afiche Oficial">
+                </figure>
+                <div class="obra-icon-col slide-in-up">
+                    <div class="obra-icon blue">
+                        <i data-lucide="map-pin" style="width:32px;height:32px;"></i>
                     </div>
-                    <!-- Obra 2 -->
-                    <div class="marcha-card text-center">
-                        <i data-lucide="soup" style="width: 48px; height: 48px; color: var(--clr-primary-red); margin-bottom:1rem;"></i>
-                        <h3>Comedor Madre de la Misericordia</h3>
-                        <p>Brindamos alimento físico y espiritual a los hermanos más vulnerables.</p>
+                </div>
+                <div class="obra-body slide-in-right">
+                    <h2>Procesión de la Divina Misericordia en Maracaibo</h2>
+                    <div class="obra-quote">
+                        "La humanidad no encontrará paz hasta que no se dirija con confianza a Mi misericordia." — Diario de Santa Faustina, 300
                     </div>
-                    <!-- Obra 3 -->
-                    <div class="marcha-card text-center">
-                        <i data-lucide="video" style="width: 48px; height: 48px; color: var(--clr-primary-gold); margin-bottom:1rem;"></i>
-                        <h3>Documentales y Cine</h3>
-                        <p>La Bella Señora y Confío: Producciones que evangelizan a través de la cultura audiovisual.</p>
+                    <p>
+                        Desde el año <strong>1996</strong>, en el Domingo de la Misericordia —segundo domingo de Pascua, instituido fiesta universal por San Juan Pablo II en el año 2000— nuestra Asociación organiza y anima la <strong>Procesión de la Divina Misericordia</strong> en la ciudad de Maracaibo, Venezuela, en obediencia al mandato de Jesús a Santa Faustina Kowalska de propagar la devoción a su Divina Misericordia en todo el mundo.
+                    </p>
+                    <p>
+                        La procesión parte desde la Parroquia Cristo Rey, recorriendo las principales avenidas del casco central de Maracaibo. Con el paso de los años, esta celebración ha crecido hasta congregar a más de <strong>trescientos mil fieles</strong>, convirtiendo a Maracaibo en una de las ciudades del mundo con mayor afluencia en esta festividad litúrgica.
+                    </p>
+                    <p>
+                        El recorrido procesional es presidido por la imagen del <em>Jesús Misericordioso</em> y se acompaña con la oración de la Coronilla de la Divina Misericordia, cantos litúrgicos y la participación de la jerarquía eclesiástica de la Arquidiócesis de Maracaibo. La celebración incluye la <strong>Santa Misa</strong> solemne al cierre del recorrido, en la cual se expone la reliquia de primer grado de Santa Faustina Kowalska, patrimonio espiritual de nuestra Asociación.
+                    </p>
+                    <p>
+                        Esta obra, que nació como un sencillo acto de piedad popular, se ha convertido en un signo profético de esperanza para el pueblo venezolano y en uno de los principales frutos del carisma que Dios ha confiado a <em>María Camino a Jesús</em>.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Obra 3: Encuentro Gracia y Misericordia -->
+        <div class="obra-block">
+            <div class="obra-inner has-img">
+                <div class="obra-icon-col slide-in-left">
+                    <div class="obra-icon sky">
+                        <i data-lucide="sparkles" style="width:32px;height:32px;"></i>
                     </div>
-                    <!-- Obra 4 -->
-                    <div class="marcha-card text-center">
-                        <i data-lucide="hammer" style="width: 48px; height: 48px; color: var(--clr-dark); margin-bottom:1rem;"></i>
-                        <h3>Restauración de Coromoto</h3>
-                        <p>Salvaguardando nuestro patrimonio espiritual con la restauración de imágenes de alto valor histórico.</p>
+                </div>
+                <div class="obra-body slide-in-right">
+                    <h2>Encuentro Gracia y Misericordia</h2>
+                    <p>
+                        Debido al crecimiento continuo del número de fieles que cada año asistían a la celebración de la procesión de la Misericordia, sentimos la inquietud de poder brindar un espacio en el cual los fieles pudieran alimentar su fe de manera sólida, a fin de que esta celebración no fuera sólo un acto de piedad popular, sino que ayudara a impulsar procesos profundos de transformación y conversión personal.
+                    </p>
+                    <p>
+                        En el año <strong>2011</strong>, con motivo de la celebración del 15° aniversario de la procesión de la Misericordia, y con el respaldo del entonces Obispo Auxiliar Mons. Cástor Oswaldo Azuaje, solicitamos a las Hermanas de la Congregación de la Madre de Dios de la Misericordia una reliquia de primer grado de Santa Sor Faustina Kowalska, siendo la <strong>primera reliquia de primer grado de esta santa conferida a una comunidad en Venezuela</strong>.
+                    </p>
+                    <p>
+                        Es así como, de la mano de la Santísima Virgen María y de Santa Faustina Kowalska, recibimos la inspiración de crear el encuentro <strong>"Gracia y Misericordia"</strong>, el cual celebramos desde el año <strong>2013</strong>, durante la primera semana del mes de octubre de cada año, con especial preeminencia el día 05 por ser la fiesta litúrgica de Santa Faustina.
+                    </p>
+                    <p>
+                        Este encuentro es abierto a cualquier persona que desee conocer y profundizar en diferentes aspectos concernientes a nuestra fe. Se ha desarrollado con la participación de predicadores católicos como el Dr. Ricardo Castañón, la Lcda. Dunia Mavarez, el Lcdo. Elvy Monzant, la Hna. Gracelia Molina A.R.C.J. (Vicepostuladora de la causa de canonización de la Madre María de San José) y la Hna. Gaudia Skass de la Congregación de las Hnas. de la Madre de Dios de la Misericordia.
+                    </p>
+                    <p>
+                        En este encuentro los fieles tienen la oportunidad de profundizar en su fe, orar, alabar a Dios, hacer adoración eucarística, acudir al sacramento de la confesión y venerar la reliquia de Santa Faustina Kowalska.
+                    </p>
+                </div>
+                <figure class="obra-side-img slide-in-right">
+                    <img src="../assets/img-obra-encuentro.jpg" alt="Encuentro Gracia y Misericordia">
+                </figure>
+            </div>
+        </div>
+
+        <!-- Obra 4: Producciones Audiovisuales -->
+        <div class="obra-block">
+            <div class="obra-inner">
+                <div class="obra-icon-col slide-in-left">
+                    <div class="obra-icon dark">
+                        <i data-lucide="film" style="width:32px;height:32px;"></i>
+                    </div>
+                </div>
+                <div class="obra-body slide-in-right">
+                    <h2>Producciones Audiovisuales</h2>
+                    <p>
+                        Como parte de nuestro carisma, hemos trabajado desde el año <strong>1996</strong> en la difusión de la devoción de la Divina Misericordia a través de producciones audiovisuales que han llegado a millones de fieles en toda la región.
+                    </p>
+
+                    <div class="sub-obras-grid">
+                        <!-- Coronilla -->
+                        <div class="sub-obra-card">
+                            <img src="../assets/img-coronilla.jpg" alt="Coronilla a la Divina Misericordia" class="sub-obra-thumb">
+                            <h3><i data-lucide="tv-2" style="width:20px;height:20px;"></i> Coronilla a la Divina Misericordia</h3>
+                            <p>
+                                En <strong>2006</strong>, junto a un pequeño grupo de fieles y la Hna. Francisca de los Ángeles, grabamos la <em>"Novena de la Misericordia"</em>, transmitida por Niños Cantores Televisión desde el Viernes Santo. En 2007 fue producida en alianza con Global TV en señal abierta regional.
+                            </p>
+                            <p style="margin-top: 0.8rem;">
+                                En <strong>2008 y 2010</strong>, con Global Productora, se grabó <em>"La Coronilla de la Misericordia"</em>, transmitida diariamente por NCTV de lunes a domingo a las <strong>3:00 p.m.</strong>, de manera ininterrumpida. Por mucho tiempo se mantuvo en el primer lugar de sintonía de la televisión regional del Zulia.
+                            </p>
+                            <p style="margin-top: 0.8rem;">
+                                El <strong>08 de diciembre de 2018</strong> fue grabada una nueva edición con participación de jóvenes de la Arquidiócesis, con correcciones en la oración según las indicaciones de las Hijas de la Madre de Dios de la Misericordia (Congregación de Santa Faustina).
+                            </p>
+                            <a href="https://www.youtube.com/channel/UCIZbhIy3w1BFdGya7tvdYdw" target="_blank">
+                                <i data-lucide="youtube" style="width:16px;height:16px;"></i> Ver en YouTube
+                            </a>
+                        </div>
+
+                        <!-- El Resplandor -->
+                        <div class="sub-obra-card">
+                            <img src="../assets/img-coromoto.jpg" alt="El Resplandor de la Bella Señora" class="sub-obra-thumb">
+                            <h3><i data-lucide="star" style="width:20px;height:20px;"></i> El Resplandor de la Bella Señora</h3>
+                            <p>
+                                En <strong>enero de 2009</strong>, los obispos de toda Venezuela, reunidos en asamblea general y de la mano de Mons. José Sotero Valero, V Obispo de Guanare, concedieron a nuestra Asociación la autorización para realizar el proceso de <strong>restauración de la Sagrada Reliquia de Ntra. Sra. de Coromoto</strong>, custodiada en Guanare, Estado Portuguesa.
+                            </p>
+                            <p style="margin-top: 0.8rem;">
+                                Este proceso se llevó a cabo del <strong>09 al 15 de marzo de 2009</strong>, revelando hallazgos hasta entonces desconocidos. El documental, producido en <strong>2010</strong>, relata en 57 minutos la historia de las apariciones de la Patrona de Venezuela a la tribu de los indios Coromoto, con imágenes inéditas del proceso de restauración.
+                            </p>
+                        </div>
+
+                        <!-- Confío -->
+                        <div class="sub-obra-card">
+                            <img src="../assets/img-confio.jpg" alt="Confío, Viaje a la Esperanza" class="sub-obra-thumb">
+                            <h3><i data-lucide="globe" style="width:20px;height:20px;"></i> Confío, Viaje a la Esperanza</h3>
+                            <p>
+                                Maracaibo es reconocida a nivel mundial como una de las ciudades que congrega más fieles en el Domingo de la Misericordia. Más de <strong>trescientos mil devotos</strong> recorren las principales avenidas bajo un fuerte sol, con más de 35°C de temperatura.
+                            </p>
+                            <p style="margin-top: 0.8rem;">
+                                Producido por José Luis Matheus y María Goya Sumoza, bajo la visión del realizador Jesús Reyes Borjas, este documental recorre más de <strong>diez ciudades entre Polonia, Lituania e Italia</strong> siguiendo las huellas de Santa Faustina y la relación profunda de San Juan Pablo II con la Divina Misericordia.
+                            </p>
+                            <p style="margin-top: 0.8rem;">
+                                Un viaje interior de búsquedas y reconocimiento espiritual, que convierte a la Divina Misericordia en un idioma universal para la humanidad.
+                            </p>
+                            <div class="award-badge">
+                                <i data-lucide="award" style="width:14px;height:14px;"></i>
+                                Premio Mons. Pellín — CEV 2017
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+
     </main>
     <app-footer base-path="../"></app-footer>
     <script src="../script.js"></script>

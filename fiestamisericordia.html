@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XXIX Fiesta de la Misericordia 2026 · Maracaibo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ===== DESIGN TOKENS ===== */
+:root {
+  --blue-deep: #1A3E82;
+  --blue-mid: #2557C7;
+  --blue-sky: #70B8DF;
+  --gold: #F0C43D;
+  --gold-dark: #C99B0A;
+  --cream: #FDF8EE;
+  --cream-dark: #F5EDD8;
+  --white: #FFFFFF;
+  --dark: #1A1A2E;
+  --gray: #6B7280;
+  --gray-light: #F3F4F6;
+  --red-ray: #E8524A;
+
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Outfit', sans-serif;
+
+  --shadow-sm: 0 2px 8px rgba(26,62,130,0.08);
+  --shadow-md: 0 8px 32px rgba(26,62,130,0.14);
+  --shadow-lg: 0 20px 60px rgba(26,62,130,0.20);
+  --transition: all 0.35s cubic-bezier(0.25,0.8,0.25,1);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--dark);
+  background: var(--cream);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+img { max-width:100%; height:auto; display:block; }
+a { text-decoration:none; color:inherit; transition: var(--transition); }
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  z-index: 1000;
+  background: linear-gradient(to bottom, rgba(26,30,60,0.65) 0%, transparent 100%);
+  padding: 1.2rem 0;
+  transition: var(--transition);
+}
+.navbar.scrolled {
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px);
+  padding: 0.8rem 0;
+  box-shadow: 0 2px 20px rgba(26,62,130,0.10);
+  border-bottom: 1px solid rgba(240,196,61,0.25);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.nav-brand-icon {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  border-radius: 50%;
+  display: flex; align-items:center; justify-content:center;
+  color: var(--blue-deep);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.nav-brand-text {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: white;
+  font-weight: 400;
+  line-height: 1.2;
+  transition: var(--transition);
+}
+.navbar.scrolled .nav-brand-text { color: var(--blue-deep); }
+.nav-links {
+  display: flex; align-items:center; gap: 2rem;
+}
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  position: relative;
+  transition: var(--transition);
+}
+.nav-links a::after {
+  content:'';
+  position:absolute; bottom:-4px; left:0;
+  width:0; height:2px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+.nav-links a:hover::after { width:100%; }
+.navbar.scrolled .nav-links a { color: var(--blue-deep); }
+.nav-cta {
+  background: var(--gold) !important;
+  color: var(--blue-deep) !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 700 !important;
+}
+.nav-cta::after { display:none !important; }
+.hamburger {
+  display:none;
+  background:none; border:none; cursor:pointer;
+  color: white;
+  font-size:1.4rem;
+  transition: var(--transition);
+}
+.navbar.scrolled .hamburger { color: var(--blue-deep); }
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 80px;
+}
+.hero-bg {
+  position: absolute; inset:0;
+  background: 
+    linear-gradient(to bottom, rgba(10,20,60,0.55) 0%, rgba(10,20,60,0.35) 40%, rgba(10,20,60,0.75) 100%),
+    url('HERO.webp') center/cover no-repeat;
+  transform: scale(1.05);
+  animation: heroZoom 18s ease-in-out infinite alternate;
+}
+@keyframes heroZoom {
+  0% { transform: scale(1.05); }
+  100% { transform: scale(1.12); }
+}
+.hero-rays {
+  position:absolute; inset:0;
+  background: radial-gradient(ellipse at 50% 60%, rgba(240,196,61,0.12) 0%, transparent 65%);
+  pointer-events:none;
+}
+.hero-content {
+  position:relative; z-index:2;
+  max-width: 900px;
+  padding: 2rem 1.5rem;
+  animation: fadeUp 1s ease both;
+}
+@keyframes fadeUp {
+  from { opacity:0; transform: translateY(30px); }
+  to { opacity:1; transform: translateY(0); }
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center; gap: 0.6rem;
+  background: rgba(240,196,61,0.18);
+  border: 1px solid rgba(240,196,61,0.4);
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 1s 0.2s ease both;
+}
+.hero-eyebrow-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50% { opacity:0.5; transform:scale(1.4); }
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 300;
+  color: white;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+  animation: fadeUp 1s 0.3s ease both;
+}
+.hero-title-big {
+  font-family: var(--font-display);
+  font-size: clamp(4.5rem, 14vw, 10rem);
+  font-weight: 600;
+  color: white;
+  line-height: 0.9;
+  display: block;
+  text-shadow: 0 4px 40px rgba(240,196,61,0.3);
+  animation: fadeUp 1s 0.4s ease both;
+}
+.hero-year {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin: 1.2rem 0 0.8rem;
+  animation: fadeUp 1s 0.5s ease both;
+}
+.hero-lema {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-style: italic;
+  color: rgba(255,255,255,0.88);
+  max-width: 600px;
+  margin: 0 auto 1rem;
+  animation: fadeUp 1s 0.6s ease both;
+}
+.hero-source {
+  font-size: 0.8rem;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: fadeUp 1s 0.7s ease both;
+  margin-bottom: 2.5rem;
+}
+.hero-date-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-top: 3px solid var(--gold);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  animation: fadeUp 1s 0.8s ease both;
+}
+.hero-date-badge .day-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.hero-date-badge .date-text {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: white;
+  line-height: 1.1;
+}
+.hero-actions {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+  animation: fadeUp 1s 0.9s ease both;
+}
+.btn-gold {
+  display: inline-flex; align-items:center; gap: 0.5rem;
+  background: var(--gold);
+  color: var(--blue-deep);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  transition: var(--transition);
+  box-shadow: 0 4px 20px rgba(240,196,61,0.35);
+}
+.btn-gold:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(240,196,61,0.5);
+  background: #F7D160;
+}
+.btn-outline-white {
+  display: inline-flex; align-items:center; gap: 0.5rem;
+  background: transparent;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  border: 2px solid rgba(255,255,255,0.5);
+  transition: var(--transition);
+}
+.btn-outline-white:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: white;
+  transform: translateY(-3px);
+}
+.hero-scroll {
+  position:absolute; bottom:2rem; left:50%; transform:translateX(-50%);
+  color: rgba(255,255,255,0.5);
+  font-size: 1.3rem;
+  animation: bounce 2.5s infinite;
+}
+@keyframes bounce {
+  0%,100%{transform:translateX(-50%) translateY(0);}
+  50%{transform:translateX(-50%) translateY(8px);}
+}
+
+/* ===== SECTIONS BASE ===== */
+.section { padding: 5rem 1.5rem; }
+.container { max-width: 1200px; margin: 0 auto; }
+.section-tag {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 1rem;
+}
+.section-tag::before {
+  content:'';
+  width:24px; height:2px;
+  background: var(--gold);
+  display:block;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  color: var(--blue-deep);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+.section-title em {
+  font-style: italic;
+  color: var(--blue-mid);
+}
+.section-lead {
+  font-size: 1.1rem;
+  color: var(--gray);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* ===== ABOUT / LEMA ===== */
+.about-section { background: var(--white); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.about-img-wrap {
+  position: relative;
+}
+.about-img-wrap img {
+  border-radius: 20px;
+  width: 100%;
+  box-shadow: var(--shadow-lg);
+}
+.about-img-wrap::before {
+  content:'';
+  position:absolute;
+  top: -16px; left: -16px; right: 16px; bottom: 16px;
+  border: 2px solid var(--gold);
+  border-radius: 20px;
+  z-index: -1;
+}
+.about-img-badge {
+  position: absolute;
+  bottom: -1.5rem; right: -1.5rem;
+  background: var(--blue-deep);
+  color: white;
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+.about-img-badge .badge-num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+}
+.about-img-badge .badge-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.about-text p {
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+.highlight-box {
+  background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 12px 12px 0;
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+}
+.highlight-box p {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--blue-deep);
+  margin: 0 !important;
+}
+.highlight-box span {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--gold-dark);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 0.5rem;
+}
+.feature-pills {
+  display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem;
+}
+.pill {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: var(--cream);
+  border: 1px solid rgba(26,62,130,0.12);
+  color: var(--blue-deep);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  border-radius: 50px;
+}
+.pill i { color: var(--gold-dark); font-size: 0.75rem; }
+
+/* ===== CRONOGRAMA ===== */
+.schedule-section {
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+.schedule-section::before {
+  content:'';
+  position:absolute;
+  top:0; right: -200px;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(240,196,61,0.08) 0%, transparent 70%);
+  pointer-events:none;
+}
+.schedule-header { text-align: center; margin-bottom: 4rem; }
+.schedule-header .section-tag { justify-content: center; }
+.schedule-header .section-tag::before { display:none; }
+.schedule-header .section-tag::after {
+  content:'';
+  width:24px; height:2px;
+  background: var(--gold);
+  display:block;
+}
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+.day-card {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+.day-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+.day-header {
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+.day-card:nth-child(1) .day-header { background: linear-gradient(135deg, #1A3E82 0%, #2557C7 100%); }
+.day-card:nth-child(2) .day-header { background: linear-gradient(135deg, #2557C7 0%, #3A6FD8 100%); }
+.day-card:nth-child(3) .day-header { background: linear-gradient(135deg, #1A3E82 0%, #0D2659 100%); }
+.day-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 0.3rem;
+}
+.day-date {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.2rem;
+}
+.day-name {
+  font-size: 0.85rem;
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.day-events { padding: 1.5rem; }
+.event-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(26,62,130,0.07);
+}
+.event-item:last-child { border-bottom: none; }
+.event-time {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--blue-mid);
+  white-space: nowrap;
+  min-width: 60px;
+  padding-top: 2px;
+}
+.event-info {}
+.event-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 0.2rem;
+}
+.event-location {
+  font-size: 0.8rem;
+  color: var(--gray);
+  display: flex; align-items: center; gap: 0.3rem;
+}
+.event-location i { color: var(--gold-dark); font-size: 0.7rem; }
+.event-badge {
+  display: inline-block;
+  background: rgba(240,196,61,0.15);
+  color: var(--gold-dark);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+  margin-top: 0.3rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.event-badge.special {
+  background: rgba(37,87,199,0.1);
+  color: var(--blue-mid);
+}
+
+/* ===== STREAMING BANNER ===== */
+.stream-banner {
+  background: linear-gradient(135deg, var(--blue-deep) 0%, #0D2659 100%);
+  border-radius: 20px;
+  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.stream-info {
+  display: flex; align-items: center; gap: 1.5rem;
+}
+.stream-icon {
+  width: 60px; height: 60px;
+  background: rgba(255,0,0,0.15);
+  border-radius: 16px;
+  display: flex; align-items:center; justify-content:center;
+  color: #FF4444;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+.stream-text h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.3rem;
+}
+.stream-text p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.65);
+}
+.stream-text span {
+  color: var(--gold);
+  font-weight: 600;
+}
+.btn-youtube {
+  display: inline-flex; align-items:center; gap: 0.6rem;
+  background: #FF0000;
+  color: white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.btn-youtube:hover {
+  background: #CC0000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255,0,0,0.35);
+  color: white;
+}
+
+/* ===== VIRGEN BETANIA ===== */
+.betania-section {
+  background: linear-gradient(165deg, var(--blue-deep) 0%, #0D2659 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.betania-section::before {
+  content:'';
+  position:absolute; inset:0;
+  background: url('LEMA_OFICIAL.webp') center/cover no-repeat;
+  opacity: 0.06;
+}
+.betania-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  position: relative; z-index: 1;
+}
+.betania-text .section-tag { color: var(--gold); }
+.betania-text .section-tag::before { background: var(--gold); }
+.betania-text .section-title { color: white; }
+.betania-text .section-title em { color: var(--blue-sky); }
+.betania-text p {
+  color: rgba(255,255,255,0.75);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.betania-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.stat-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+  padding: 1.2rem;
+  text-align: center;
+  transition: var(--transition);
+}
+.stat-card:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(240,196,61,0.35);
+}
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.stat-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.5);
+}
+.betania-img-wrap {
+  position: relative;
+}
+.betania-img-wrap img {
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  width: 100%;
+}
+.betania-img-wrap::after {
+  content:'';
+  position:absolute;
+  inset: -2px;
+  border-radius: 22px;
+  border: 2px solid rgba(240,196,61,0.3);
+  pointer-events:none;
+}
+
+/* ===== LOGÍSTICA ===== */
+.logistics-section { background: var(--white); }
+.logistics-header { text-align: center; margin-bottom: 3.5rem; }
+.logistics-header .section-lead { margin: 0 auto; }
+.logistics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+.logistic-card {
+  background: var(--cream);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 1px solid rgba(26,62,130,0.08);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.logistic-card::after {
+  content:'';
+  position:absolute;
+  bottom:0; left:0; right:0;
+  height:3px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+.logistic-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.logistic-card:hover::after { transform: scaleX(1); }
+.logistic-icon {
+  width: 56px; height: 56px;
+  background: linear-gradient(135deg, var(--blue-deep), var(--blue-mid));
+  border-radius: 16px;
+  display: flex; align-items:center; justify-content:center;
+  color: white;
+  font-size: 1.3rem;
+  margin: 0 auto 1.2rem;
+}
+.logistic-num {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: var(--blue-deep);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.logistic-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.logistics-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.detail-card {
+  background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-mid) 100%);
+  border-radius: 16px;
+  padding: 1.8rem;
+  color: white;
+  transition: var(--transition);
+}
+.detail-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.detail-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+  display: flex; align-items:center; gap: 0.5rem;
+}
+.detail-card ul {
+  list-style: none;
+  padding: 0;
+}
+.detail-card ul li {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.8);
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.detail-card ul li:last-child { border-bottom: none; }
+.detail-card ul li::before {
+  content: '→';
+  color: var(--gold);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* ===== LEMA SECTION ===== */
+.lema-section {
+  background: var(--cream);
+  padding: 6rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.lema-section::before {
+  content:'';
+  position:absolute;
+  top:50%; left:50%;
+  transform: translate(-50%, -50%);
+  width: 800px; height: 800px;
+  border-radius: 50%;
+  border: 1px solid rgba(26,62,130,0.05);
+}
+.lema-section::after {
+  content:'';
+  position:absolute;
+  top:50%; left:50%;
+  transform: translate(-50%, -50%);
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  border: 1px solid rgba(240,196,61,0.1);
+}
+.lema-content { position:relative; z-index:1; max-width: 800px; margin: 0 auto; }
+.lema-quote {
+  font-size: 1.5rem;
+  color: var(--gold-dark);
+  margin-bottom: 1.5rem;
+}
+.lema-text {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--blue-deep);
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+.lema-text em {
+  font-weight: 600;
+  color: var(--blue-mid);
+}
+.lema-source {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+.lema-img {
+  max-width: 400px;
+  margin: 3rem auto 0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.lema-img img { width: 100%; }
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--dark);
+  color: white;
+  padding: 4rem 1.5rem 2rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-brand {}
+.footer-logo-area {
+  display: flex; align-items:center; gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+.footer-logo-icon {
+  width: 40px; height: 40px;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  border-radius: 10px;
+  display: flex; align-items:center; justify-content:center;
+  color: var(--blue-deep);
+  font-size: 1.1rem;
+}
+.footer-logo-text {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: white;
+}
+.footer-brand p {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  max-width: 260px;
+}
+.footer-socials {
+  display: flex; gap: 0.6rem; margin-top: 1.5rem;
+}
+.social-btn {
+  width: 38px; height: 38px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  display: flex; align-items:center; justify-content:center;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+.social-btn:hover {
+  background: var(--gold);
+  color: var(--blue-deep);
+  transform: translateY(-3px);
+}
+.footer-col h5 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+.footer-col ul { list-style:none; }
+.footer-col ul li {
+  margin-bottom: 0.7rem;
+}
+.footer-col ul li a {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.9rem;
+  transition: var(--transition);
+  display: flex; align-items:center; gap: 0.4rem;
+}
+.footer-col ul li a:hover { color: white; transform: translateX(4px); }
+.footer-col ul li a i { font-size: 0.7rem; color: var(--gold); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 2rem;
+  display: flex;
+  align-items:center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-bottom p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.35);
+}
+.footer-bottom span {
+  color: var(--gold);
+  font-weight: 600;
+}
+.orgs-logos {
+  display: flex; align-items:center; gap: 1rem; flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.org-badge {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* ===== MOBILE NAV ===== */
+@media (max-width: 900px) {
+  .hamburger { display: block; }
+  .nav-links {
+    position: fixed;
+    top:0; right:-100%; width:80%; max-width:320px; height:100vh;
+    background: white;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+    transition: right 0.4s cubic-bezier(0.25,0.8,0.25,1);
+    z-index: 999;
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+  .nav-links.open { right: 0; }
+  .nav-links a { color: var(--blue-deep) !important; font-size: 1.1rem; }
+  .nav-overlay {
+    position:fixed; inset:0;
+    background: rgba(0,0,0,0.4);
+    z-index: 998;
+    display: none;
+  }
+  .nav-overlay.open { display:block; }
+}
+
+@media (max-width: 992px) {
+  .days-grid { grid-template-columns: 1fr; }
+  .about-grid, .betania-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .about-img-wrap { max-width: 400px; }
+  .logistics-grid { grid-template-columns: repeat(2,1fr); }
+  .logistics-details { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+@media (max-width: 600px) {
+  .logistics-grid { grid-template-columns: repeat(2,1fr); }
+  .footer-grid { grid-template-columns: 1fr; }
+  .stream-banner { flex-direction: column; text-align:center; }
+  .stream-info { flex-direction: column; }
+  .betania-stats { grid-template-columns: 1fr 1fr; }
+  .hero-actions { flex-direction: column; align-items:center; }
+  .days-grid { gap: 1.5rem; }
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<!-- NAV OVERLAY -->
+<div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-brand-icon"><i class="fa-solid fa-cross"></i></div>
+      <div class="nav-brand-text">Fiesta de la<br><strong>Misericordia</strong></div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Inicio</a>
+      <a href="#cronograma">Cronograma</a>
+      <a href="#betania">Betania</a>
+      <a href="#logistica">Logística</a>
+      <a href="#lema">Lema</a>
+      <a href="https://youtube.com/@mariacaminoajesus" class="nav-cta"><i class="fa-brands fa-youtube"></i> En vivo</a>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
+      <i class="fa-solid fa-bars" id="menuIcon"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-rays"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-dot"></span>
+      XXIX Edición · Maracaibo, Venezuela
+    </div>
+    <h1 class="hero-title">Fiesta de la</h1>
+    <span class="hero-title-big">Misericordia</span>
+    <p class="hero-year">Del 10 al 12 de Abril de 2026</p>
+    <p class="hero-lema">"Habla al mundo de Mi gran e insondable Misericordia"</p>
+    <p class="hero-source">— Diario Santa Faustina, 164</p>
+    <div class="hero-date-badge">
+      <span class="day-label">Domingo Principal</span>
+      <span class="date-text">12 de Abril · Domingo de la Misericordia</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#cronograma" class="btn-gold"><i class="fa-solid fa-calendar-days"></i> Ver Cronograma</a>
+      <a href="https://youtube.com/@mariacaminoajesus" class="btn-outline-white" target="_blank"><i class="fa-brands fa-youtube"></i> Transmisión en Vivo</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><i class="fa-solid fa-chevron-down"></i></div>
+</section>
+
+<!-- ===== ABOUT / LEMA ===== -->
+<section class="section about-section" id="evento">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <img src="AFICHE_FIESTA_26.webp" alt="Lema Oficial - Fiesta de la Misericordia 2026">
+        <div class="about-img-badge">
+          <div class="badge-num">XXIX</div>
+          <div class="badge-label">Edición</div>
+        </div>
+      </div>
+      <div class="about-text reveal reveal-delay-1">
+        <div class="section-tag"><i class="fa-solid fa-dove"></i> Sobre la Fiesta</div>
+        <h2 class="section-title">Maracaibo celebra su <em>gran encuentro de fe</em></h2>
+        <p>La ciudad de Maracaibo se alista para vivir uno de los eventos de fe más grandes del país: la <strong>XXIX Fiesta de la Misericordia</strong>, que se celebrará del viernes 10 al domingo 12 de abril de 2026.</p>
+        <p>Miles de feligreses se congregarán en una jornada de oración, reconciliación y encuentro profundo con la Misericordia de Dios.</p>
+        <div class="highlight-box">
+          <p>"Habla al mundo de Mi gran e insondable Misericordia"</p>
+          <span>Diario de Santa Faustina, 164 — Lema Oficial 2026</span>
+        </div>
+        <div class="feature-pills">
+          <span class="pill"><i class="fa-solid fa-church"></i> Hora Santa</span>
+          <span class="pill"><i class="fa-solid fa-person-walking"></i> Gran Procesión</span>
+          <span class="pill"><i class="fa-solid fa-bread-slice"></i> Eucaristía Solemne</span>
+          <span class="pill"><i class="fa-solid fa-music"></i> Adoración</span>
+          <span class="pill"><i class="fa-solid fa-map-marker-alt"></i> Maracaibo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CRONOGRAMA ===== -->
+<section class="section schedule-section" id="cronograma">
+  <div class="container">
+    <div class="schedule-header reveal">
+      <div class="section-tag">Cronograma Oficial</div>
+      <h2 class="section-title">Tres días de <em>Misericordia</em></h2>
+      <p class="section-lead">Un itinerario completo para toda la familia y la feligresía, cargado de oración, celebración y encuentro.</p>
+    </div>
+
+    <div class="days-grid">
+      <!-- Viernes -->
+      <div class="day-card reveal reveal-delay-1">
+        <div class="day-header">
+          <div class="day-label">Día 1</div>
+          <div class="day-date">Viernes, 10 de Abril</div>
+          <div class="day-name"><i class="fa-solid fa-star"></i> Apertura</div>
+        </div>
+        <div class="day-events">
+          <div class="event-item">
+            <div class="event-time">6:00 pm</div>
+            <div class="event-info">
+              <div class="event-name">Maracaibo se encuentra con la Virgen Reconciliadora</div>
+              <div class="event-location"><i class="fa-solid fa-location-dot"></i> Plaza La República</div>
+              <span class="event-badge">50º Aniversario Betania</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sábado -->
+      <div class="day-card reveal reveal-delay-2">
+        <div class="day-header">
+          <div class="day-label">Día 2</div>
+          <div class="day-date">Sábado, 11 de Abril</div>
+          <div class="day-name"><i class="fa-solid fa-moon"></i> Noche de Misericordia</div>
+        </div>
+        <div class="day-events">
+          <div class="event-item">
+            <div class="event-time">6:00 pm</div>
+            <div class="event-info">
+              <div class="event-name">Noche de Misericordia</div>
+              <div class="event-location"><i class="fa-solid fa-location-dot"></i> Futuro Santuario · Grano de Oro</div>
+              <span class="event-badge special">Fray Luis Salazar + Coral Betania</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Domingo -->
+      <div class="day-card reveal reveal-delay-3">
+        <div class="day-header">
+          <div class="day-label">Día 3 · Principal</div>
+          <div class="day-date">Domingo, 12 de Abril</div>
+          <div class="day-name"><i class="fa-solid fa-sun"></i> Fiesta de la Misericordia</div>
+        </div>
+        <div class="day-events">
+          <div class="event-item">
+            <div class="event-time">1:30 pm</div>
+            <div class="event-info">
+              <div class="event-name">Punto de Encuentro</div>
+              <div class="event-location"><i class="fa-solid fa-location-dot"></i> Punto de partida</div>
+              <span class="event-badge special">Fray Luis Salazar + Vanessa Marín</span>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-time">2:00 pm</div>
+            <div class="event-info">
+              <div class="event-name">Hora Santa</div>
+              <div class="event-location"><i class="fa-solid fa-location-dot"></i> Iglesia Nuestra Señora de la Consolación · Av. Bella Vista</div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-time">3:00 pm</div>
+            <div class="event-info">
+              <div class="event-name">Gran Procesión</div>
+              <div class="event-location"><i class="fa-solid fa-location-dot"></i> Calle 5 de Julio → Grano de Oro</div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-time">5:30 pm</div>
+            <div class="event-info">
+              <div class="event-name">Santa Eucaristía Solemne</div>
+              <div class="event-location"><i class="fa-solid fa-location-dot"></i> Grano de Oro</div>
+              <span class="event-badge">Instrumentos de Misericordia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stream Banner -->
+    <div class="stream-banner reveal">
+      <div class="stream-info">
+        <div class="stream-icon"><i class="fa-brands fa-youtube"></i></div>
+        <div class="stream-text">
+          <h4>Transmisión Vía Streaming</h4>
+          <p>El Domingo 12 de abril desde las <span>1:30 pm</span> por YouTube</p>
+          <p>Canal: <span>María Camino a Jesús</span></p>
+        </div>
+      </div>
+      <a href="https://youtube.com/@mariacaminoajesus" target="_blank" class="btn-youtube">
+        <i class="fa-brands fa-youtube"></i> Ver en YouTube
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VIRGEN DE BETANIA ===== -->
+<section class="section betania-section" id="betania">
+  <div class="container">
+    <div class="betania-grid">
+      <div class="betania-text">
+        <div class="section-tag">Hito Histórico 2026</div>
+        <h2 class="section-title">La Virgen <em>Reconciliadora</em> visita Maracaibo</h2>
+        <p>Este año, la festividad contará con un momento único: la visita del <strong style="color:white;">Movimiento de Espiritualidad y la Coral Betania</strong> (provenientes de Caracas), quienes traerán consigo la sagrada imagen de la Virgen y Madre Reconciliadora de todos los pueblos y naciones.</p>
+        <p>Esta visita conmemora el <strong style="color:var(--gold);">50º aniversario de la aparición</strong> de la Virgen Reconciliadora a la Sierva de Dios, María Esperanza Medrano de Bianchini, en la Finca Betania.</p>
+        <div class="betania-stats">
+          <div class="stat-card">
+            <div class="stat-num">50</div>
+            <div class="stat-label">Años de la aparición</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">XXIX</div>
+            <div class="stat-label">Edición de la Fiesta</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">3</div>
+            <div class="stat-label">Días de celebración</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">1</div>
+            <div class="stat-label">Ciudad unida en fe</div>
+          </div>
+        </div>
+      </div>
+      <div class="betania-img-wrap reveal">
+        <img src="BETANIA.webp" alt="Afiche Oficial Fiesta de la Misericordia 2026">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LOGÍSTICA ===== -->
+<section class="section logistics-section" id="logistica">
+  <div class="container">
+    <div class="logistics-header reveal">
+      <div class="section-tag"><i class="fa-solid fa-shield-halved"></i> Operativo Integral</div>
+      <h2 class="section-title">Tu seguridad y bienestar, <em>nuestra prioridad</em></h2>
+      <p class="section-lead">Un despliegue sin precedentes para garantizar la mejor experiencia a cada peregrino a lo largo del recorrido.</p>
+    </div>
+
+    <div class="logistics-grid">
+      <div class="logistic-card reveal reveal-delay-1">
+        <div class="logistic-icon"><i class="fa-solid fa-droplet"></i></div>
+        <div class="logistic-num">70+</div>
+        <div class="logistic-label">Puntos de Hidratación</div>
+      </div>
+      <div class="logistic-card reveal reveal-delay-2">
+        <div class="logistic-icon"><i class="fa-solid fa-user-doctor"></i></div>
+        <div class="logistic-num">270</div>
+        <div class="logistic-label">Profesionales de Salud</div>
+      </div>
+      <div class="logistic-card reveal reveal-delay-3">
+        <div class="logistic-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="logistic-num">500+</div>
+        <div class="logistic-label">Funcionarios de Seguridad</div>
+      </div>
+      <div class="logistic-card reveal reveal-delay-4">
+        <div class="logistic-icon"><i class="fa-solid fa-map-marker-alt"></i></div>
+        <div class="logistic-num">6</div>
+        <div class="logistic-label">Oasis de Misericordia</div>
+      </div>
+    </div>
+
+    <div class="logistics-details">
+      <div class="detail-card reveal reveal-delay-1">
+        <h4><i class="fa-solid fa-tent"></i> Oasis de Misericordia</h4>
+        <ul>
+          <li>6 puntos de encuentro integrales</li>
+          <li>Atención médica en cada oasis</li>
+          <li>Baños públicos disponibles</li>
+          <li>Hidratación continua</li>
+          <li>Animación musical</li>
+        </ul>
+      </div>
+      <div class="detail-card reveal reveal-delay-2">
+        <h4><i class="fa-solid fa-ambulance"></i> Despliegue de Salud</h4>
+        <ul>
+          <li>35 puntos de atención médica</li>
+          <li>55 unidades de apoyo total</li>
+          <li>10 ambulancias confirmadas</li>
+          <li>5 clínicas móviles</li>
+          <li>Personal médico y paramédico</li>
+        </ul>
+      </div>
+      <div class="detail-card reveal reveal-delay-3">
+        <h4><i class="fa-solid fa-building-shield"></i> Seguridad Garantizada</h4>
+        <ul>
+          <li>Gobernación del Estado Zulia</li>
+          <li>Alcaldías de Maracaibo y San Francisco</li>
+          <li>Sistema 911 (Gobierno Nacional)</li>
+          <li>ZODI Zulia No. 11</li>
+          <li>Todos los organismos de seguridad</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LEMA ===== -->
+<section class="lema-section" id="lema">
+  <div class="lema-content">
+    <div class="reveal">
+      <div class="section-tag" style="justify-content:center; margin-bottom:1.5rem;">
+        <i class="fa-solid fa-quote-left" style="font-size:1rem; color:var(--gold-dark);"></i>
+        Lema Oficial 2026
+        <i class="fa-solid fa-quote-right" style="font-size:1rem; color:var(--gold-dark);"></i>
+      </div>
+      <p class="lema-text">
+        "Habla al mundo<br>de Mi gran e insondable<br><em>Misericordia"</em>
+      </p>
+      <p class="lema-source">Diario de Santa Faustina · Entrada 164</p>
+    </div>
+    <div class="lema-img reveal">
+      <img src="LEMA_OFICIAL.webp" alt="Lema Oficial - Fiesta de la Misericordia 2026">
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" id="contacto">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-area">
+          <div class="footer-logo-icon"><i class="fa-solid fa-cross"></i></div>
+          <div class="footer-logo-text">Asociación<br><strong>María Camino a Jesús</strong></div>
+        </div>
+        <p>Organizadores de la Fiesta de la Misericordia en Maracaibo, Venezuela. Unidos por la fe, la esperanza y la devoción a la Misericordia Divina.</p>
+        <div class="footer-socials">
+          <a href="https://instagram.com/mariacaminoajesus" target="_blank" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://youtube.com/@mariacaminoajesus" target="_blank" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Cronograma</h5>
+        <ul>
+          <li><a href="#cronograma"><i class="fa-solid fa-circle-right"></i> Viernes 10 · Plaza La República</a></li>
+          <li><a href="#cronograma"><i class="fa-solid fa-circle-right"></i> Sábado 11 · Noche de Misericordia</a></li>
+          <li><a href="#cronograma"><i class="fa-solid fa-circle-right"></i> Domingo 12 · Hora Santa 2:00 pm</a></li>
+          <li><a href="#cronograma"><i class="fa-solid fa-circle-right"></i> Domingo 12 · Procesión 3:00 pm</a></li>
+          <li><a href="#cronograma"><i class="fa-solid fa-circle-right"></i> Domingo 12 · Eucaristía 5:30 pm</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>El Evento</h5>
+        <ul>
+          <li><a href="#evento"><i class="fa-solid fa-circle-right"></i> Sobre la Fiesta</a></li>
+          <li><a href="#betania"><i class="fa-solid fa-circle-right"></i> Virgen de Betania</a></li>
+          <li><a href="#logistica"><i class="fa-solid fa-circle-right"></i> Logística</a></li>
+          <li><a href="#lema"><i class="fa-solid fa-circle-right"></i> Lema Oficial</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Transmisión</h5>
+        <ul>
+          <li><a href="https://youtube.com/@mariacaminoajesus" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube en Vivo</a></li>
+          <li><a href="https://instagram.com/mariacaminoajesus" target="_blank"><i class="fa-brands fa-instagram"></i> @mariacaminoajesus</a></li>
+        </ul>
+        <div style="margin-top:1.5rem;">
+          <p style="font-size:0.75rem; color:rgba(255,255,255,0.35); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.5rem;">Organizado con el apoyo de</p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+            <span class="org-badge">Arquidiócesis de Maracaibo</span>
+            <span class="org-badge">Parroquia La Consolación</span>
+            <span class="org-badge">Alcaldía Maracaibo</span>
+            <span class="org-badge">Gobernación del Zulia</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 <span>Asociación María Camino a Jesús</span> · Maracaibo, Venezuela</p>
+      <p>XXIX Fiesta de la Misericordia · Todos los derechos reservados</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Navbar scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 60) navbar.classList.add('scrolled');
+  else navbar.classList.remove('scrolled');
+});
+
+// Mobile menu
+function toggleMenu() {
+  const links = document.getElementById('navLinks');
+  const overlay = document.getElementById('navOverlay');
+  const icon = document.getElementById('menuIcon');
+  links.classList.toggle('open');
+  overlay.classList.toggle('open');
+  icon.className = links.classList.contains('open') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+}
+function closeMenu() {
+  document.getElementById('navLinks').classList.remove('open');
+  document.getElementById('navOverlay').classList.remove('open');
+  document.getElementById('menuIcon').className = 'fa-solid fa-bars';
+}
+document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeMenu));
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

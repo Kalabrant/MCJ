@@ -7,14 +7,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const navLinks = document.querySelector('.nav-links');
 
         // Scroll effect
+        const updateNavbar = () => {
+            if (!navbar) return;
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        };
         if(navbar) {
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-            });
+            window.addEventListener('scroll', updateNavbar);
+            updateNavbar(); // ejecutar al cargar para estado inicial correcto
         }
 
         // Mobile Menu

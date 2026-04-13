@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XXIX Fiesta de la Misericordia 2026 · Maracaibo</title>
+<title>XXIX Fiesta de la Misericordia 2026 · Maracaibo (Recap)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 <style>
 /* ===== DESIGN TOKENS ===== */
@@ -181,16 +182,6 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
   margin-bottom: 1.5rem;
   animation: fadeUp 1s 0.2s ease both;
 }
-.hero-eyebrow-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--gold);
-  animation: pulse 2s infinite;
-}
-@keyframes pulse {
-  0%,100% { opacity:1; transform:scale(1); }
-  50% { opacity:0.5; transform:scale(1.4); }
-}
 .hero-title {
   font-family: var(--font-display);
   font-size: clamp(3rem, 8vw, 6rem);
@@ -348,8 +339,55 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
   line-height: 1.7;
 }
 
+/* ===== CAROUSEL / GALERÍA ===== */
+.gallery-section {
+  background: var(--white);
+  padding-bottom: 2rem;
+}
+.gallery-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.gallery-header .section-tag { justify-content: center; }
+.gallery-header .section-tag::before, .gallery-header .section-tag::after {
+  content:''; width:24px; height:2px; background: var(--gold); display:block;
+}
+.gallery-header .section-lead { margin: 0 auto; }
+.swiper {
+  width: 100%;
+  padding-bottom: 4rem; /* Espacio para la paginación */
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 16 / 9;
+  background-color: var(--cream-dark);
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-button-next, .swiper-button-prev {
+  color: var(--gold);
+  background: rgba(255,255,255,0.8);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+}
+.swiper-button-next::after, .swiper-button-prev::after { font-size: 1.2rem; font-weight: bold; }
+.swiper-pagination-bullet-active { background: var(--gold); }
+
 /* ===== ABOUT / LEMA ===== */
-.about-section { background: var(--white); }
+.about-section { background: var(--cream); }
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
@@ -403,7 +441,7 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
   line-height: 1.8;
 }
 .highlight-box {
-  background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+  background: linear-gradient(135deg, var(--white) 0%, var(--cream-dark) 100%);
   border-left: 4px solid var(--gold);
   border-radius: 0 12px 12px 0;
   padding: 1.2rem 1.5rem;
@@ -432,7 +470,7 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
 }
 .pill {
   display: inline-flex; align-items: center; gap: 0.4rem;
-  background: var(--cream);
+  background: var(--white);
   border: 1px solid rgba(26,62,130,0.12);
   color: var(--blue-deep);
   font-size: 0.85rem;
@@ -444,7 +482,7 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
 
 /* ===== CRONOGRAMA ===== */
 .schedule-section {
-  background: var(--cream);
+  background: var(--white);
   position: relative;
   overflow: hidden;
 }
@@ -461,10 +499,7 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
 .schedule-header .section-tag { justify-content: center; }
 .schedule-header .section-tag::before { display:none; }
 .schedule-header .section-tag::after {
-  content:'';
-  width:24px; height:2px;
-  background: var(--gold);
-  display:block;
+  content:''; width:24px; height:2px; background: var(--gold); display:block;
 }
 .days-grid {
   display: grid;
@@ -473,10 +508,10 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
   margin-bottom: 3rem;
 }
 .day-card {
-  background: var(--white);
+  background: var(--cream);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   transition: var(--transition);
 }
 .day-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
@@ -692,7 +727,7 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
 }
 
 /* ===== LOGÍSTICA ===== */
-.logistics-section { background: var(--white); }
+.logistics-section { background: var(--cream); }
 .logistics-header { text-align: center; margin-bottom: 3.5rem; }
 .logistics-header .section-lead { margin: 0 auto; }
 .logistics-grid {
@@ -702,7 +737,7 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
   margin-bottom: 3rem;
 }
 .logistic-card {
-  background: var(--cream);
+  background: var(--white);
   border-radius: 16px;
   padding: 2rem 1.5rem;
   text-align: center;
@@ -787,7 +822,7 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
 
 /* ===== LEMA SECTION ===== */
 .lema-section {
-  background: var(--cream);
+  background: var(--white);
   padding: 6rem 1.5rem;
   text-align: center;
   position: relative;
@@ -1009,10 +1044,8 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
 </head>
 <body>
 
-<!-- NAV OVERLAY -->
 <div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
 
-<!-- ===== NAVBAR ===== -->
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-brand">
@@ -1021,11 +1054,11 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
     </a>
     <div class="nav-links" id="navLinks">
       <a href="index.html">Inicio</a>
-      <a href="#cronograma">Cronograma</a>
+      <a href="#galeria">Galería</a>
+      <a href="#cronograma">Recorrido</a>
       <a href="#betania">Betania</a>
       <a href="#logistica">Logística</a>
-      <a href="#lema">Lema</a>
-      <a href="https://youtube.com/@mariacaminoajesus" class="nav-cta"><i class="fa-brands fa-youtube"></i> En vivo</a>
+      <a href="https://youtube.com/@mariacaminoajesus" class="nav-cta"><i class="fa-brands fa-youtube"></i> Revive el evento</a>
     </div>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
       <i class="fa-solid fa-bars" id="menuIcon"></i>
@@ -1033,33 +1066,54 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
   </div>
 </nav>
 
-<!-- ===== HERO ===== -->
 <section class="hero" id="inicio">
   <div class="hero-bg"></div>
   <div class="hero-rays"></div>
   <div class="hero-content">
     <div class="hero-eyebrow">
       <span class="hero-eyebrow-dot"></span>
-      XXIX Edición · Maracaibo, Venezuela
+      XXIX Edición Culminada · Maracaibo, Venezuela
     </div>
     <h1 class="hero-title">Fiesta de la</h1>
     <span class="hero-title-big">Misericordia</span>
-    <p class="hero-year">Del 10 al 12 de Abril de 2026</p>
+    <p class="hero-year">Celebrada del 10 al 12 de Abril de 2026</p>
     <p class="hero-lema">"Habla al mundo de Mi gran e insondable Misericordia"</p>
     <p class="hero-source">— Diario Santa Faustina, 164</p>
     <div class="hero-date-badge">
-      <span class="day-label">Domingo Principal</span>
-      <span class="date-text">12 de Abril · Domingo de la Misericordia</span>
+      <span class="day-label">Domingo de la Misericordia</span>
+      <span class="date-text">Gracias por acompañarnos</span>
     </div>
     <div class="hero-actions">
-      <a href="#cronograma" class="btn-gold"><i class="fa-solid fa-calendar-days"></i> Ver Cronograma</a>
-      <a href="https://youtube.com/@mariacaminoajesus" class="btn-outline-white" target="_blank"><i class="fa-brands fa-youtube"></i> Transmisión en Vivo</a>
+      <a href="#galeria" class="btn-gold"><i class="fa-solid fa-images"></i> Ver Galería</a>
+      <a href="https://youtube.com/@mariacaminoajesus" class="btn-outline-white" target="_blank"><i class="fa-brands fa-youtube"></i> Revive la Transmisión</a>
     </div>
   </div>
   <div class="hero-scroll"><i class="fa-solid fa-chevron-down"></i></div>
 </section>
 
-<!-- ===== ABOUT / LEMA ===== -->
+<section class="section gallery-section" id="galeria">
+  <div class="container">
+    <div class="gallery-header reveal">
+      <div class="section-tag"><i class="fa-solid fa-camera"></i> Momentos Inolvidables</div>
+      <h2 class="section-title">Así vivimos la <em>Fiesta</em></h2>
+      <p class="section-lead">Revive en imágenes los momentos más emotivos de nuestra XXIX edición, donde la fe y la devoción llenaron las calles de Maracaibo.</p>
+    </div>
+
+    <div class="swiper gallerySwiper reveal reveal-delay-1">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="GALERIA_1.webp" alt="Momento de la Fiesta 1"></div>
+        <div class="swiper-slide"><img src="GALERIA_2.webp" alt="Momento de la Fiesta 2"></div>
+        <div class="swiper-slide"><img src="GALERIA_3.webp" alt="Momento de la Fiesta 3"></div>
+        <div class="swiper-slide"><img src="GALERIA_4.webp" alt="Momento de la Fiesta 4"></div>
+        <div class="swiper-slide"><img src="GALERIA_5.webp" alt="Momento de la Fiesta 5"></div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
 <section class="section about-section" id="evento">
   <div class="container">
     <div class="about-grid">
@@ -1072,9 +1126,9 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
       </div>
       <div class="about-text reveal reveal-delay-1">
         <div class="section-tag"><i class="fa-solid fa-dove"></i> Sobre la Fiesta</div>
-        <h2 class="section-title">Maracaibo celebra su <em>gran encuentro de fe</em></h2>
-        <p>La ciudad de Maracaibo se alista para vivir uno de los eventos de fe más grandes del país: la <strong>XXIX Fiesta de la Misericordia</strong>, que se celebrará del viernes 10 al domingo 12 de abril de 2026.</p>
-        <p>Miles de feligreses se congregarán en una jornada de oración, reconciliación y encuentro profundo con la Misericordia de Dios.</p>
+        <h2 class="section-title">Maracaibo celebró su <em>gran encuentro de fe</em></h2>
+        <p>La ciudad de Maracaibo vivió uno de los eventos de fe más grandes del país: la <strong>XXIX Fiesta de la Misericordia</strong>, que se llevó a cabo del viernes 10 al domingo 12 de abril de 2026.</p>
+        <p>Miles de feligreses se congregaron en una hermosa jornada de oración, reconciliación y encuentro profundo con la Misericordia de Dios.</p>
         <div class="highlight-box">
           <p>"Habla al mundo de Mi gran e insondable Misericordia"</p>
           <span>Diario de Santa Faustina, 164 — Lema Oficial 2026</span>
@@ -1091,17 +1145,15 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
   </div>
 </section>
 
-<!-- ===== CRONOGRAMA ===== -->
 <section class="section schedule-section" id="cronograma">
   <div class="container">
     <div class="schedule-header reveal">
-      <div class="section-tag">Cronograma Oficial</div>
+      <div class="section-tag">Memoria Oficial</div>
       <h2 class="section-title">Tres días de <em>Misericordia</em></h2>
-      <p class="section-lead">Un itinerario completo para toda la familia y la feligresía, cargado de oración, celebración y encuentro.</p>
+      <p class="section-lead">Así se desarrolló el itinerario preparado para toda la familia y la feligresía, cargado de oración, celebración y encuentro.</p>
     </div>
 
     <div class="days-grid">
-      <!-- Viernes -->
       <div class="day-card reveal reveal-delay-1">
         <div class="day-header">
           <div class="day-label">Día 1</div>
@@ -1112,7 +1164,7 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
           <div class="event-item">
             <div class="event-time">6:00 pm</div>
             <div class="event-info">
-              <div class="event-name">Maracaibo se encuentra con la Virgen Reconciliadora</div>
+              <div class="event-name">Maracaibo se encontró con la Virgen Reconciliadora</div>
               <div class="event-location"><i class="fa-solid fa-location-dot"></i> Plaza La República</div>
               <span class="event-badge">50º Aniversario Betania</span>
             </div>
@@ -1120,7 +1172,6 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
         </div>
       </div>
 
-      <!-- Sábado -->
       <div class="day-card reveal reveal-delay-2">
         <div class="day-header">
           <div class="day-label">Día 2</div>
@@ -1139,7 +1190,6 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
         </div>
       </div>
 
-      <!-- Domingo -->
       <div class="day-card reveal reveal-delay-3">
         <div class="day-header">
           <div class="day-label">Día 3 · Principal</div>
@@ -1159,7 +1209,7 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
             <div class="event-time">2:00 pm</div>
             <div class="event-info">
               <div class="event-name">Hora Santa</div>
-              <div class="event-location"><i class="fa-solid fa-location-dot"></i> Iglesia Nuestra Señora de la Consolación · Av. Bella Vista</div>
+              <div class="event-location"><i class="fa-solid fa-location-dot"></i> Iglesia Nuestra Señora de la Consolación</div>
             </div>
           </div>
           <div class="event-item">
@@ -1181,32 +1231,30 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
       </div>
     </div>
 
-    <!-- Stream Banner -->
     <div class="stream-banner reveal">
       <div class="stream-info">
         <div class="stream-icon"><i class="fa-brands fa-youtube"></i></div>
         <div class="stream-text">
           <h4>Transmisión Vía Streaming</h4>
-          <p>El Domingo 12 de abril desde las <span>1:30 pm</span> por YouTube</p>
-          <p>Canal: <span>María Camino a Jesús</span></p>
+          <p>El Domingo 12 de abril transmitimos el recorrido de fe.</p>
+          <p>Puedes revivirlo en el Canal: <span>María Camino a Jesús</span></p>
         </div>
       </div>
       <a href="https://youtube.com/@mariacaminoajesus" target="_blank" class="btn-youtube">
-        <i class="fa-brands fa-youtube"></i> Ver en YouTube
+        <i class="fa-brands fa-youtube"></i> Revive el Streaming
       </a>
     </div>
   </div>
 </section>
 
-<!-- ===== VIRGEN DE BETANIA ===== -->
 <section class="section betania-section" id="betania">
   <div class="container">
     <div class="betania-grid">
       <div class="betania-text">
         <div class="section-tag">Hito Histórico 2026</div>
-        <h2 class="section-title">La Virgen <em>Reconciliadora</em> visita Maracaibo</h2>
-        <p>Este año, la festividad contará con un momento único: la visita del <strong style="color:white;">Movimiento de Espiritualidad y la Coral Betania</strong> (provenientes de Caracas), quienes traerán consigo la sagrada imagen de la Virgen y Madre Reconciliadora de todos los pueblos y naciones.</p>
-        <p>Esta visita conmemora el <strong style="color:var(--gold);">50º aniversario de la aparición</strong> de la Virgen Reconciliadora a la Sierva de Dios, María Esperanza Medrano de Bianchini, en la Finca Betania.</p>
+        <h2 class="section-title">La Virgen <em>Reconciliadora</em> visitó Maracaibo</h2>
+        <p>Este año, la festividad contó con un momento único: la visita del <strong style="color:white;">Movimiento de Espiritualidad y la Coral Betania</strong> (provenientes de Caracas), quienes trajeron consigo la sagrada imagen de la Virgen y Madre Reconciliadora de todos los pueblos y naciones.</p>
+        <p>Esta visita conmemoró el <strong style="color:var(--gold);">50º aniversario de la aparición</strong> de la Virgen Reconciliadora a la Sierva de Dios, María Esperanza Medrano de Bianchini, en la Finca Betania.</p>
         <div class="betania-stats">
           <div class="stat-card">
             <div class="stat-num">50</div>
@@ -1233,13 +1281,12 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
   </div>
 </section>
 
-<!-- ===== LOGÍSTICA ===== -->
 <section class="section logistics-section" id="logistica">
   <div class="container">
     <div class="logistics-header reveal">
       <div class="section-tag"><i class="fa-solid fa-shield-halved"></i> Operativo Integral</div>
-      <h2 class="section-title">Tu seguridad y bienestar, <em>nuestra prioridad</em></h2>
-      <p class="section-lead">Un despliegue sin precedentes para garantizar la mejor experiencia a cada peregrino a lo largo del recorrido.</p>
+      <h2 class="section-title">Tu seguridad y bienestar, <em>fueron nuestra prioridad</em></h2>
+      <p class="section-lead">Un despliegue sin precedentes que garantizó la mejor experiencia a cada peregrino a lo largo del recorrido.</p>
     </div>
 
     <div class="logistics-grid">
@@ -1269,21 +1316,21 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
       <div class="detail-card reveal reveal-delay-1">
         <h4><i class="fa-solid fa-tent"></i> Oasis de Misericordia</h4>
         <ul>
-          <li>6 puntos de encuentro integrales</li>
+          <li>6 puntos de encuentro integrales instalados</li>
           <li>Atención médica en cada oasis</li>
-          <li>Baños públicos disponibles</li>
-          <li>Hidratación continua</li>
-          <li>Animación musical</li>
+          <li>Baños públicos desplegados</li>
+          <li>Hidratación continua a los asistentes</li>
+          <li>Animación musical en la ruta</li>
         </ul>
       </div>
       <div class="detail-card reveal reveal-delay-2">
         <h4><i class="fa-solid fa-ambulance"></i> Despliegue de Salud</h4>
         <ul>
-          <li>35 puntos de atención médica</li>
+          <li>35 puntos de atención médica exitosos</li>
           <li>55 unidades de apoyo total</li>
-          <li>10 ambulancias confirmadas</li>
-          <li>5 clínicas móviles</li>
-          <li>Personal médico y paramédico</li>
+          <li>10 ambulancias en sitio</li>
+          <li>5 clínicas móviles atendiendo peregrinos</li>
+          <li>Personal médico y paramédico capacitado</li>
         </ul>
       </div>
       <div class="detail-card reveal reveal-delay-3">
@@ -1293,14 +1340,13 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
           <li>Alcaldías de Maracaibo y San Francisco</li>
           <li>Sistema 911 (Gobierno Nacional)</li>
           <li>ZODI Zulia No. 11</li>
-          <li>Todos los organismos de seguridad</li>
+          <li>Todos los organismos de seguridad sumados</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== LEMA ===== -->
 <section class="lema-section" id="lema">
   <div class="lema-content">
     <div class="reveal">
@@ -1320,7 +1366,6 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
 <footer class="footer" id="contacto">
   <div class="container">
     <div class="footer-grid">
@@ -1336,32 +1381,32 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
         </div>
       </div>
       <div class="footer-col">
-        <h5>Cronograma</h5>
+        <h5>Cronograma (Memoria)</h5>
         <ul>
           <li><a href="#cronograma"><i class="fa-solid fa-circle-right"></i> Viernes 10 · Plaza La República</a></li>
           <li><a href="#cronograma"><i class="fa-solid fa-circle-right"></i> Sábado 11 · Noche de Misericordia</a></li>
-          <li><a href="#cronograma"><i class="fa-solid fa-circle-right"></i> Domingo 12 · Hora Santa 2:00 pm</a></li>
-          <li><a href="#cronograma"><i class="fa-solid fa-circle-right"></i> Domingo 12 · Procesión 3:00 pm</a></li>
-          <li><a href="#cronograma"><i class="fa-solid fa-circle-right"></i> Domingo 12 · Eucaristía 5:30 pm</a></li>
+          <li><a href="#cronograma"><i class="fa-solid fa-circle-right"></i> Domingo 12 · Hora Santa</a></li>
+          <li><a href="#cronograma"><i class="fa-solid fa-circle-right"></i> Domingo 12 · Procesión</a></li>
+          <li><a href="#cronograma"><i class="fa-solid fa-circle-right"></i> Domingo 12 · Eucaristía</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h5>El Evento</h5>
+        <h5>Revive el Evento</h5>
         <ul>
+          <li><a href="#galeria"><i class="fa-solid fa-circle-right"></i> Galería de Fotos</a></li>
           <li><a href="#evento"><i class="fa-solid fa-circle-right"></i> Sobre la Fiesta</a></li>
           <li><a href="#betania"><i class="fa-solid fa-circle-right"></i> Virgen de Betania</a></li>
-          <li><a href="#logistica"><i class="fa-solid fa-circle-right"></i> Logística</a></li>
-          <li><a href="#lema"><i class="fa-solid fa-circle-right"></i> Lema Oficial</a></li>
+          <li><a href="#logistica"><i class="fa-solid fa-circle-right"></i> Resumen Logístico</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Transmisión</h5>
+        <h5>Nuestras Redes</h5>
         <ul>
-          <li><a href="https://youtube.com/@mariacaminoajesus" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube en Vivo</a></li>
+          <li><a href="https://youtube.com/@mariacaminoajesus" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
           <li><a href="https://instagram.com/mariacaminoajesus" target="_blank"><i class="fa-brands fa-instagram"></i> @mariacaminoajesus</a></li>
         </ul>
         <div style="margin-top:1.5rem;">
-          <p style="font-size:0.75rem; color:rgba(255,255,255,0.35); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.5rem;">Organizado con el apoyo de</p>
+          <p style="font-size:0.75rem; color:rgba(255,255,255,0.35); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.5rem;">Realizado con el apoyo de</p>
           <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
             <span class="org-badge">Arquidiócesis de Maracaibo</span>
             <span class="org-badge">Parroquia La Consolación</span>
@@ -1377,6 +1422,8 @@ a { text-decoration:none; color:inherit; transition: var(--transition); }
     </div>
   </div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
 // Navbar scroll
@@ -1407,6 +1454,35 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Inicializar Swiper (Carrusel de Galería)
+var swiper = new Swiper(".gallerySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  loop: true,
+  autoplay: {
+    delay: 3500,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+  },
+});
 </script>
 </body>
 </html>

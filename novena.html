@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novena a María Auxiliadora | María Camino a Jesús</title>
+    <meta name="description" content="Novena de preparación para la solemnidad de María Auxiliadora, Patrona de la Asociación María Camino a Jesús. 16 al 24 de mayo de 2026.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="novena.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/components.js" defer></script>
+</head>
+<body class="page-novena">
+<app-header base-path="./"></app-header>
+
+<main>
+    <!-- HERO -->
+    <section class="hero novena-hero" style="min-height: 70vh; background-image: url('assets/novena/hero-novena.webp'); background-size: cover; background-position: center;">
+        <div class="hero-bg">
+            <img src="assets/novena/hero-novena.webp" alt="María Auxiliadora">
+            <div class="hero-overlay" style="background: linear-gradient(135deg, rgba(26,62,130,0.78) 0%, rgba(240,196,61,0.45) 100%);"></div>
+        </div>
+        <div class="hero-content fade-in-up">
+            <span style="color: var(--clr-white); font-size: 1rem; font-family: var(--font-sans); font-weight: 500; letter-spacing: 3px; display:block; text-transform: uppercase; margin-bottom: 1rem;">Patrona de nuestra Asociación</span>
+            <h1 class="hero-title" style="margin-top:0; margin-bottom:0;">
+                <span>Novena a María Auxiliadora</span>
+            </h1>
+            <span class="hero-subtitle" style="color: var(--clr-primary-gold); margin-top:-1rem; display:block;">16 al 24 de mayo de 2026</span>
+            <p class="hero-description">Nueve días de preparación para la solemnidad de María Auxiliadora — trasladada al lunes 25 de mayo por coincidir con el Domingo de Pentecostés.</p>
+            <div class="hero-actions">
+                <a href="#dias" class="btn-primary large"><i data-lucide="calendar-days"></i> Ir al día de hoy</a>
+                <a href="#oraciones-comunes" class="btn-secondary large"><i data-lucide="book-marked"></i> Oraciones comunes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="section-padding novena-intro">
+        <div class="container" style="max-width: 900px;">
+            <div class="intro-card slide-in-up">
+                <i data-lucide="sparkles" class="intro-icon"></i>
+                <h2 class="section-title text-center" style="margin: 0 auto 1.5rem;">Preparación para la Consagración</h2>
+                <p>Esta novena conduce nuestro corazón hacia la <strong>Consagración Total a María Auxiliadora</strong>, Patrona de la Asociación Pública de Fieles <em>María Camino a Jesús</em>. Cada día contiene una lectura bíblica, una meditación y una oración propia.</p>
+                <p>Aunque el texto completo de los nueve días está siempre disponible aquí, durante la novena la página te abrirá automáticamente <strong>el día que corresponde</strong>.</p>
+                <div class="aviso-pentecostes">
+                    <i data-lucide="info"></i>
+                    <span>Este año, el último día de la novena coincide con el <strong>Domingo de Pentecostés</strong>; por ello la fiesta de María Auxiliadora se traslada al <strong>lunes 25 de mayo</strong>.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INDICADOR DE DÍA ACTUAL -->
+    <section class="dia-actual-bar" id="dia-actual-bar" style="display:none;">
+        <div class="container">
+            <div class="bar-inner">
+                <div class="bar-pulse"></div>
+                <span>Hoy es el <strong id="bar-dia">—</strong> de la novena · <span id="bar-fecha">—</span></span>
+                <a href="#dia-1" id="bar-link" class="btn-primary" style="font-size:0.85rem; padding:0.5rem 1.2rem;">Ver oración de hoy</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOS 9 DÍAS -->
+    <section class="section-padding novena-dias" id="dias">
+        <div class="container">
+            <h2 class="section-title text-center">Los nueve días</h2>
+            <p class="section-subtitle text-center">Pulsa sobre cualquier día para abrirlo. El día corriente se abre automáticamente.</p>
+            <div class="dias-grid">
+                
+      <article class="dia-card" id="dia-1" data-dia="1" data-fecha="2026-05-16">
+        <button class="dia-header" aria-expanded="false" aria-controls="dia-1-content">
+          <div class="dia-header-left">
+            <div class="dia-numero"><span>Día</span><strong>1</strong></div>
+            <div class="dia-info">
+              <span class="dia-fecha">Sábado 16 de mayo</span>
+              <h3 class="dia-titulo">No me han elegido ustedes, he sido yo quien les elegí </h3>
+              <span class="dia-lectura">Lectura del Evangelio según San Juan 15, 16-17</span>
+            </div>
+          </div>
+          <div class="dia-toggle"><i data-lucide="chevron-down"></i></div>
+        </button>
+        <div class="dia-content" id="dia-1-content">
+          <div class="dia-imagen">
+            <img src="assets/novena/dia-1.webp" alt="Imagen alusiva al día 1 de la novena" loading="lazy" onerror="this.src='assets/virgen-maria.webp'">
+          </div>
+          <div class="dia-cuerpo">
+            <div class="dia-section">
+              <h4><i data-lucide="book-open"></i> Lectura bíblica</h4>
+              <p class="cita">Lectura del Evangelio según San Juan 15, 16-17</p>
+              <blockquote><p>No son ustedes los que me eligieron a mí, sino yo el que los elegí a ustedes, y los destiné para que vayan y den fruto, y ese fruto sea duradero. Así todo lo que pidan al Padre en mi Nombre, él se lo concederá. Lo que yo les mando es que se amen los unos a los otros.</p></blockquote>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="quote"></i> Meditación</h4>
+              <div class="meditacion"><p>Nos relata el libro del Génesis que Dios nos creó a su “ imagen y semejanza ” (Gn 1,26), es decir nos creó para vivir en comunión con Él en santidad y amor; pero “ el hombre, tentado por el diablo, dejó morir en su corazón la confianza hacia su creador (cf. Gn 3,1-11) y, abusando de su libertad, desobedeció al mandamiento de Dios. En esto consistió el primer pecado del hombre (cf. Rm 5,19). En adelante, todo pecado será una desobediencia a Dios y una falta de confianza en su bondad, hiriéndonos en el núcleo de nuestra relación con Dios ” (CIC 397). “La Escritura muestralas consecue ncias dramáticas de esta primera desobediencia. Adán y Eva pierden inmediatamente la gracia de la santidad original (cf. Rm 3,23). Tienen miedo del Dios (cf. Gn 3,9-10) de quien han concebido una falsa imagen, la de un Dios celoso de sus prerrogativas (cf. Gn 3,5)” (CIC 399). Sin embargo &quot;Dios, que es rico en misericordia, por el grande amor con que nos amó, estando muertos a causa de nuestros delitos, nos vivificó juntamente con Cristo&quot; (Ef. 2,4-5). Esta misericordia por la cual Dios ha venido a nuestro en cuentro, fue acogida de manera plena por la Santísima Virgen María, pues en ella, la Inmaculada, “el Verbo se hizo carne” (Jn. 1,14). Hemos sido llamados por Jesús para estar con Él, de tal manera que las heridas que nos ha producido el pecado sean curadas, y la imagen según la cual fuimos creados restaurada. Para ello se ha valido de su Madre Santísima, quien nos congrega continuamente en torno a Él, para enseñarnos a amarle como solo ella lo ha sabido hacer. Ella nos conduce con delicadeza maternal al en cuentro íntimo con la Misericordia del Padre, a través de su Hijo por la acción del Espíritu Santo. Este encuentro de amor ha de llevarnos a experimentar un anhelo constante de conversión, de tal manera que la desconfianza en Dios sea transformada por una confianza robusta y sin límites, que nos llevará a amarle íntima y profundamente. Este llamado a la conversión es un camino que sólo acabará el día en que el Padre nos llame a su lado, un llamado inmerecido que tiene su origen en el amor incondicional con que Dios nos ama y en su Divina Misericordia. Por lo tanto es imprescindible que para atender el llamado que Jesús nos hace a través de María Auxiliadora, nos reconozcamos pecadores, necesitados de la Misericordia de Dios y la imploremos. De la alegría de sabernos amados incondicionalmente por nuestro Padre, nacerá el deseo de volver a ser la imagen y semejanza según la cual hemos sido creados. Para lograr esta conversión, el Señor nos ofrece los medios necesarios para poder perseverar, y el primero de ell os es la Iglesia, sacramento de salvación, quienes depositaria y dispensadora de los tesoros del Reino de Dios, aquíen acogemos como Madre y Maestra y nos sometemos en obediencia amorosa. Así pues, todos estamos llamados a vivir la alegría de la santidad, valiéndonos principalmente de la recepción frecuente de los Sacramentos, la oración personal y comunitaria, la Palabra de Dios, el sacrificio, la penitencia y la caridad fraterna, bajo el manto de nuestra Madre Celestial quien nos conducirá hasta la unió n perfecta y definitiva con Dios.</p></div>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="hand-heart"></i> Oración del día</h4>
+              <div class="oracion"><p>En este primer día de preparación para profesar la promesa de servicio al Señor a través de tus manos maternales, María Auxiliadora, recurrimos a ti implorando que nos alcances las gracias necesarias para disponer nuestros corazones con humildad y arrepentimiento, ante el llamado recibido. Oh María, refugio de los pecadores, que por tu mediación podamos ser dóciles a la acción renovadora y transformadora del Espíritu Santo en nuestra s vidas, para así responder con generosidad y alegría al llamado que Jesús Misericordioso nos hace a vivir la santidad. Ofrecemos el Santo Rosario por todos los que hemos sentido el llamado de Dios a servirle de manera especial en “María, camino a Jesús”, así como por aquellos hermanos que han partido a la casa del Padre y por quienes el Señor llamará en el futuro a conformar esta gran familia.</p></div>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="circle-dot"></i> Rosario</h4>
+              <div class="rosario"><p>Se recitan los misterios correspondientes a cada día, iniciando con la oración del</p></div>
+            </div>
+            <div class="dia-section common-link">
+              <p>Continúa con las <a href="#oraciones-comunes">oraciones comunes de la novena</a> (Acto de Contrición, Invocación al Espíritu Santo, Gozos a María Auxiliadora y Oración final).</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="dia-card" id="dia-2" data-dia="2" data-fecha="2026-05-17">
+        <button class="dia-header" aria-expanded="false" aria-controls="dia-2-content">
+          <div class="dia-header-left">
+            <div class="dia-numero"><span>Día</span><strong>2</strong></div>
+            <div class="dia-info">
+              <span class="dia-fecha">Domingo 17 de mayo</span>
+              <h3 class="dia-titulo">La Eucaristía, centro y culmen de nuestra vida.</h3>
+              <span class="dia-lectura">Lectura del Evangelio según San Juan 6, 51. 54-58</span>
+            </div>
+          </div>
+          <div class="dia-toggle"><i data-lucide="chevron-down"></i></div>
+        </button>
+        <div class="dia-content" id="dia-2-content">
+          <div class="dia-imagen">
+            <img src="assets/novena/dia-2.webp" alt="Imagen alusiva al día 2 de la novena" loading="lazy" onerror="this.src='assets/virgen-maria.webp'">
+          </div>
+          <div class="dia-cuerpo">
+            <div class="dia-section">
+              <h4><i data-lucide="book-open"></i> Lectura bíblica</h4>
+              <p class="cita">Lectura del Evangelio según San Juan 6, 51. 54-58</p>
+              <blockquote><p>Yo soy el pan vivo, bajado del cielo. Si uno como de este pan, vivirá para siempre; y el pan que yo les voy a dar, es mi carne por la vida del mundo. El que come mi carne y bebe mi sangre, tiene vida eterna, y yo le resucitaré el último día. Porque mi carne es ve rdadera comida y mi sangre verdadera bebida. El que come mi carne y bebe mi sangre, permanece en mí, y yo en él. Lo mismo que el Padre, que vive, me ha enviado y yo vivo por el Padre, también el que me coma vivirá por mí. Este es el pan bajado del cielo; no como el que comieron vuestros padres, y murieron; el que coma este pan vivirá para siempre.</p></blockquote>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="quote"></i> Meditación</h4>
+              <div class="meditacion"><p>La Eucaristía es &quot;fuente y culmen de toda la vida cristiana&quot; ( LG 11). &quot;Los demás sacramentos, como también todos los ministerios eclesiales y las obras de apostolado, están unidos a la Eucaristía y a ella se ordenan. La sagrada Eucaristía, en efecto, contiene todo el bien espiritual de la Iglesia, es decir, Cristo mismo, nuestra Pascua&quot; ( PO 5). (CIC 1324) Jesucristo está presente en la hostia consagrada con su cuerpo, sangre, alma y divinidad, resucitado, vivo y glorioso, todo entero, tal y como está en el cielo, verdadero Dios y verdadero hombre. El amor y la reverencia a Jesús en el Santísimo Sacramento ha de ser el signo más distintivo de los miembros de esta comunidad, pues Jesús mismo, en un acto de amor y misericordia inconcebible, se oculta en la apariencia del pan y del vino para habitar real y sustancialmente dentro de nosotros. A través del encuentro íntimo y frecuente co n Él, viviremos la alegría de sabernos y sentirnos amados incondicionalmente, de Él recibiremos todos los bienes, y por Él podremos sumergirnos en el abismo insondable de la Divina Misericordia que nos llevará al encuentro vivo con el Padre Celestial. Jesú s Eucaristía ha de ser nuestro “todo” y nosotros hemos de ser su “nada”. De Él tomaremos fuerzas para cargar con nuestras cruces sin desfallecer, para enfrentarnos a nuestras miserias y ponerlas bajo su mirada compasiva para que seamos transformados, de Él recibiremos el amor que nos permitirá amarnos a nosotros mismos y a nuestro prójimo, de Él recibiremos todas las gracias que nos llevarán a vivir el llamado a la santidad. Por Él podremos participar de manera anticipada de la gloria del cielo. Cada vez q ue la Santa Misa es celebrada, nos encontramos ante la presencia de la Santísima Trinidad, pues es el sacerdote quien pide al Padre Eterno que envíe al Espíritu Santo para transformar el pan y el vino en el Cuerpo y Sangre de Jesús. Es un milagro que se r epite incesantemente sobre nuestros altares, que podría ser imperceptible a nuestros sentidos, pero que es más real que el mundo visible. Cada vez que la Eucaristía es celebrada, nos encontramos ante el sacrificio vivo de Jesús en el Calvario que se entreg a por nuestra redención y la de los hombres de todos los tiempos. En la Santa Misa también nos unimos a la Santísima Virgen, a todos los ángeles y santos, a toda la Iglesia militante y la Iglesia purgante, que se hacen presentes para adorar a Dios hecho Pa n de Vida por amor, que se nos entrega como alimento para la vida eterna. A través de la Santa Comunión experimentamos la misericordia infinita de Dios, quien viene a nosotros por amor y no por nuestros méritos, los que nunca serán suficientes para alcanzar esta gracia. El único mérito que tenemos para recibirle, es Su propio amor. Así pues hemos de ser una comunidad Eucarística, donde la Santísima Virgen ha de ser la maestra que nos enseñará a amar y acoger a su Hijo, tal como lo hizo Ella desde el moment o de la Encarnación. Nuestra pobreza y limitación en el entendimiento de este misterio de amor, debe conducirnos a la búsqueda frecuente del encuentro con el Señor Sacramentado, particularmente con la comunión frecuente y la adoración eucarística. Hemos d e implorar la gracia de ser tabernáculos vivos, donde Jesús habite continuamente, para adorarle en lo profundo de nuestros pobres corazones donde ha querido poner su morada.</p></div>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="hand-heart"></i> Oración del día</h4>
+              <div class="oracion"><p>Oh María, Madre de la Eucaristía, alcánzanos la gracia de amar ardienteme nte a Jesús en el Santísimo Sacramento del Altar. Te suplicamos que en unión a San José, prepares y dispongas nuestros corazones de la misma forma que dispusieron la gruta de Belén, para que el pequeño Jesús, oculto en la Hostia, consiga una morada dispuesta y adornada por tus méritos, donde pueda ser acogido con amor y calidez. Ofrecemos este Santo Rosario pidiendo a la Santísima Virgen que haga de cada uno de los miembros de esta comunidad, humildes adoradores de Jesús Sacramentado.</p></div>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="circle-dot"></i> Rosario</h4>
+              <div class="rosario"><p>Se recitan los misterios correspondientes a cada día, iniciando con la oración del</p></div>
+            </div>
+            <div class="dia-section common-link">
+              <p>Continúa con las <a href="#oraciones-comunes">oraciones comunes de la novena</a> (Acto de Contrición, Invocación al Espíritu Santo, Gozos a María Auxiliadora y Oración final).</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="dia-card" id="dia-3" data-dia="3" data-fecha="2026-05-18">
+        <button class="dia-header" aria-expanded="false" aria-controls="dia-3-content">
+          <div class="dia-header-left">
+            <div class="dia-numero"><span>Día</span><strong>3</strong></div>
+            <div class="dia-info">
+              <span class="dia-fecha">Lunes 18 de mayo</span>
+              <h3 class="dia-titulo">María, el camino más corto, seguro y perfecto para llegar a Jesús</h3>
+              <span class="dia-lectura">Lectura del Evangelio según San Lucas 1, 26-38</span>
+            </div>
+          </div>
+          <div class="dia-toggle"><i data-lucide="chevron-down"></i></div>
+        </button>
+        <div class="dia-content" id="dia-3-content">
+          <div class="dia-imagen">
+            <img src="assets/novena/dia-3.webp" alt="Imagen alusiva al día 3 de la novena" loading="lazy" onerror="this.src='assets/virgen-maria.webp'">
+          </div>
+          <div class="dia-cuerpo">
+            <div class="dia-section">
+              <h4><i data-lucide="book-open"></i> Lectura bíblica</h4>
+              <p class="cita">Lectura del Evangelio según San Lucas 1, 26-38</p>
+              <blockquote><p>Al sexto mes fue enviado por Dios el ángel Gabriel a una ciudad de Galilea, llamada Nazaret, a una virgen desposada con un hombre llamado José, de la casa de David; el nombre de la virgen era María. Y entrando, le dijo: «Alégrate, llena de gracia, el Señor está contigo». Ella se conturbó por estas palabra s, y discurría qué significaría aquel saludo. El ángel le dijo: «No temas, María, porque has hallado gracia delante de Dios; vas a concebir en el seno y vas a dar a luz un hijo, aquíen pondrás por nombre Jesús. El será grande y será llamado Hijo del Altísimo, y el Señor Dios le dará el trono de David, su padre; reinará sobre la casa de Jacob por los siglos y su reino no tendrá fin». María respondió al ángel: « ¿Cómo será esto, puesto que no conozco varón?» El ángel le respondió: «El Espíritu Santo vendrá sobre ti y el poder del Altísimo te cubrirá con su sombra; por eso el que ha de nacer será santo y será llamado Hijo de Dios. Mira, también Isabel, tu pariente, ha concebido un hijo en su vejez, y este es ya el sexto mes de aquella que llamaban estéril, por que ninguna cosa es imposible para Dios». Dijo María: «He aquí la esclava del Señor; hágase en mí según tu palabra». Y el ángel dejándola se fue.</p></blockquote>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="quote"></i> Meditación</h4>
+              <div class="meditacion"><p>San Maximiliano María Kolbe se preguntaba: “ ¿Quién eres tú, oh Inmaculada?”, sin dudas la pequeñez y humildad de esta Madre Celestial, solo puede ser equiparada con la exaltación que Dios ha hecho de ella que es la “llena de gracia”. Los teólogos le han dado el título de “la omnipotencia suplicante” porque todo lo que pide, lo alcanza. Y San Luis María de Montfort escribe magistralmente de ella diciendo: “Dios hizo un depósito para todas las aguas, y lo llamó mar. Hizo un depósito para todas las gracias y lo llamó María”. El Señor Dios la destinó para aplastar la cabeza de la serpien te (Gn 3, 15), ella es la señal de que la promesa de salvación ha llegado (Is 20, 14), ella es la mujer vestida de sol, con la luna bajo sus pies y coronada con doce estrellas sobre la cabeza (Ap 12, 1), es la imagen viva del triunfo definitivo de la Iglesia sobre el mal. Que gran misericordia ha hecho con nosotros el Señor al entregarnos a su propia madre, como madre nuestra. A través de ella Dios quiso que su Hijo Unigénito llegara a nosotros para redimirnos, y ahora también ha querido hacer que su salvación llegue a nosotros de manera cercana e íntima a través de sus maternales cuidados. En María Santísima está el modelo de nuestra vida cristiana, en ella podemos encontrar todas las virtudes de una manera excepcional y única, especialmente su amor a Dios, su humildad profunda y su pureza incomparable. Mirándola a ella e imitándola “hallaremos gracia a los ojos de Dios” (Jn 1, 30). Conscientes de nuestra pobreza y debilidad, nos enseña cómo acoger de manera plena la Misericordia en nuestras vidas, para que podamos decir “he aquí la esclava del Señor, hágase en mí según tu palabra” (Lc 1, 38). Con su presencia en nuestras vidas y al sonido de su tierna voz quedaremos “llenos del Espíritu Santo” (Lc 1, 41). Como madre solícita v iene siempre en nuestro auxilio al igual que en las bodas de Caná, para ayudarnos e interceder a nuestro favor y decir a Jesús: Hijo mío, “no tienen vino” (Jn 2,3). Con su silencio, servicio, oración y humildad nos enseña que podemos ser verdaderos hijos del Padre y hermanos de Jesús, p ues el mismo Señor la elogió al decir que “todo el que cumpla la voluntad de mi Padre celestial, ése es mi hermano, mi hermana y mi madre” (Mt 12, 50). Incluso en los momentos de mayor sufrimiento, nos enseña que precisamente en el dolor de la Cruz es cuando más unidos estamos a Jesús, clavados con él, y al pie de la Cruz siempre la encontraremos a ella (Jn 19, 25). María Santísima es nuestra dulce madre, que como a niños pequeños nos cuida y enseña a caminar hacia la unión perfecta con Dios. Por el rezo diario del Santo Rosario nos alimenta y enseña a contemplar los misterios de la vida de Jesús con sus propios ojos, a través de esta oración le ofrendamos 50 rosas de amor que surgen de lo más profundo de nuestros corazones, y a cambio ella nos preserva del mal y el pecado como un ancla seguro de salvación y nos conduce a al íntimo conocimiento y unión con Dios. “Aquí en Dios quiere hacer muy santo, lo hace muy devoto de la Virgen María” solía decir San Luis María de Montfort, amparados bajo su manto y consa grados a su Corazón Inmaculado con toda seguridad podremos exclamar llenos del Espíritu Santo “ el Poderoso ha hecho obras grandes en mí” (Lc 1, 49). Animados con la certeza y esperanza de que esta Madre nos llevará siempre a Jesús, recordamos las palabras de San Maximiliano Kolbe: “No temas nunca amar demasiado a la Virgen, porque por más que lo intentes nunca pod rás amarla más de lo que la ama Jesús”.</p></div>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="hand-heart"></i> Oración del día</h4>
+              <div class="oracion"><p>Oh María, vida, dulzura y esperanza nuestra, muéstranos tu dulce rostro maternal y ya que el Señor te ha enriquecido y constituido como dispensadora de todas las gracias, concédenos el poder amarte tierna y f ilialmente durante toda nuestra vida, y llevar a nuestros hermanos tu amor maternal, para que juntos podamos exaltar las grandezas del Señor. Hoy te ofrecemos esta corona de rosas para dec irte que te amamos y agradecer tu cercanía y amor, que nos lleva a una estrecha unión con Dios.</p></div>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="circle-dot"></i> Rosario</h4>
+              <div class="rosario"><p>Se recitan los misterios correspondientes a cada día, iniciando con la oración del</p></div>
+            </div>
+            <div class="dia-section common-link">
+              <p>Continúa con las <a href="#oraciones-comunes">oraciones comunes de la novena</a> (Acto de Contrición, Invocación al Espíritu Santo, Gozos a María Auxiliadora y Oración final).</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="dia-card" id="dia-4" data-dia="4" data-fecha="2026-05-19">
+        <button class="dia-header" aria-expanded="false" aria-controls="dia-4-content">
+          <div class="dia-header-left">
+            <div class="dia-numero"><span>Día</span><strong>4</strong></div>
+            <div class="dia-info">
+              <span class="dia-fecha">Martes 19 de mayo</span>
+              <h3 class="dia-titulo">El amor a la Santa Madre Iglesia</h3>
+              <span class="dia-lectura">Lectura del Evangelio según San Mateo 16, 13-19</span>
+            </div>
+          </div>
+          <div class="dia-toggle"><i data-lucide="chevron-down"></i></div>
+        </button>
+        <div class="dia-content" id="dia-4-content">
+          <div class="dia-imagen">
+            <img src="assets/novena/dia-4.webp" alt="Imagen alusiva al día 4 de la novena" loading="lazy" onerror="this.src='assets/virgen-maria.webp'">
+          </div>
+          <div class="dia-cuerpo">
+            <div class="dia-section">
+              <h4><i data-lucide="book-open"></i> Lectura bíblica</h4>
+              <p class="cita">Lectura del Evangelio según San Mateo 16, 13-19</p>
+              <blockquote><p>Llegado Jesús a la región de Cesarea de Filipo, hizo esta pregunta a sus discípulos: « ¿Quién dicen los hombres que es el Hijo del hombre?» Ellos dijeron: «Unos, que Juan el Bautista; otros, que Elías, otros, que Jeremías o uno de los profetas». Díceles él: «Y vosotros ¿quién decís que soy yo?» Simón Pedro contestó: «Tú eres el Cristo, el Hi jo de Dios vivo». Replicando Jesús le dijo: «Bienaventurado eres Simón, hijo de Jonás, porque no te ha revelado esto la carne ni la sangre, sino mi Padre que está en los cielos. Y yo a mi vez te digo que tú eres Pedro, y sobre esta piedra edificaré mi Iglesia, y las puertas del Hades no prevalecerán contra ella. A ti te daré las llaves del Reino de los Cielos; y lo que ates en la tierra quedará atado en los cielos, y lo que desates en la tierra quedará desatado en los cielos».</p></blockquote>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="quote"></i> Meditación</h4>
+              <div class="meditacion"><p>«Cristo, levantado sobre la tierra, atrajo hacia sí a todos (cf. Jn 12, 32); habiendo resucitado de entre los muertos ( cf. Rm 6, 9), envió sobre los discípulos a su Espíritu vivificador, y por él hizo a su Cuerpo, que es la Iglesia, sacramento universal de salvación ( Lumen gentium, 48). Y también: «Dios formó una congregación de quienes, creyendo, ven en Jesús el autor de la salvación y el principio de la unidad y de la paz, y la constituyó Iglesia a fin de que fuera para todos y cada uno sacramento visible de esta unidad salutífera» ( Lumen gentium, 9). La Iglesia es el signo de la salvación realizada por Cristo y destinada a todos los hombres mediante la obra del Espíritu Santo. Es un signo visible: la Iglesia, como comunidad del pueblo de Dios, tiene un caráct er visible. También es un signo eficaz, pues la adhesión a la Iglesia otorga a los hombres la unión con Cristo y todas las gracias necesarias para la salvación. Los teólogos coinciden en afirmar que la Iglesia nació del costado de Cristo, en el momento en que su corazón fue traspasado en la Cruz y brotaron la Sangre y el Agua. La Iglesia es por lo tanto sacramento de la infinita Misericordia de Dios. Un sacramento «es el signo de una cosa santa y la expresión visible de la gracia invisible» (cf. DS, 1639). Vemos en la Iglesia a la Esposa de Cristo salida de su costado, al igual que Eva del costado de Adán. Ésta es su Cuerpo Místico, del cualtodos los bautizados formamos parte, donde están depositado s todos los tesoros de la gracia que son necesarios para n uestra salvación, de los cuales tiene la misión de custodiar, transmitir y dispensar para la salvación y santificación de todos sus miembros. Nuestra Iglesia es una, santa, pues ha sido fundada por Cri sto y nace de su corazón herido; católica pues es universal; apostólica pues se fundamenta en la tradición y sucesión de los apóstoles y romana pues es donde tiene su sede. En el evangelio encontramos que Jesús dice a Simón: “ tú eres Pedro, y sobre esta piedra edificaré mi Iglesia”, por lo tanto reconocemos en el Santo Padre al sucesor de Pedro, cuya autoridad ha llegado hasta nuestros tiempos a través de la imposición de manos que tiene su origen en los mismos apóstoles por mandato expreso del Señor Jesús. Al Papa le profesamos no sólo nuestro amor filial a través de la oración, sino nuestra comunión y obediencia total, pues el Señor le ha dado las “llaves del Reino de los Cielos”. Como miembros de esta comunidad acogemos también con solicitud y amor a nuestro Obispo, quien en comunión con el Santo Padre tiene la misión de pastorear al rebaño del cual formamos parte, y en consecuencia le acompañamos también con nuestra oración y obediencia, pues asumimos con humildad la premisa de que Dios nos manifiesta su voluntad a través de nuestros superiores. Al ser llamados por Dios para amarle y servirle en esta comunidad, reconocemos a nuestra Iglesia como “Madre y Maestra” que con la sabiduría que le ha sido dada por el Espíritu Santo, nos conduce a través de las Sagradas Escrituras, la Sagrada Tradición y el Magi sterio, por el camino seguro de la salvación. En consecuencia aceptamos, asumimos y vivimos de acuerdo a su doctrina de manera plena y sin reservas, y cuya custodia y transmisión ejerce a través de la jerarquía. A esta Madre profesamos nuestro amor como hi jos buenos, que no sólo le obedecen, sino que la cuidan, ayudan a edificar y defienden. Finalmente debemos siempre tener presente que la Eucaristía actúa y hace presente a la Iglesia, en la medida en que ésta (como sacramento) celebra la Eucaristía. La Ig lesia se manifiesta en la Eucaristía, y la Eucaristía hace la Iglesia. Sobre todo en la Eucaristía la Iglesia es y se convierte cada vez más en el sacramento «de la unión íntima con Dios» ( Lumen gentium, 1).</p></div>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="hand-heart"></i> Oración del día</h4>
+              <div class="oracion"><p>Oh María, Madre de la Iglesia, alcánzanos la gracia de tener un profundo y entrañable amor por la Iglesia que nos es ofrecida por Jesús como sacramento de salvación. Ayúdanos a entender que somos parte de este Cuerpo Místico y que estamos llamados a vivir en ella nuestro compromiso bautismal. Te ofrecemos este Santo Rosario pidiéndote de manera especial por el Santo Padre, por nuestro Obispo y por todas las realidades que en nuestra Iglesia no son signos la santidad deseada por Dios.</p></div>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="circle-dot"></i> Rosario</h4>
+              <div class="rosario"><p>Se recitan los misterios correspondientes a cada día, iniciando con la oración del</p></div>
+            </div>
+            <div class="dia-section common-link">
+              <p>Continúa con las <a href="#oraciones-comunes">oraciones comunes de la novena</a> (Acto de Contrición, Invocación al Espíritu Santo, Gozos a María Auxiliadora y Oración final).</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="dia-card" id="dia-5" data-dia="5" data-fecha="2026-05-20">
+        <button class="dia-header" aria-expanded="false" aria-controls="dia-5-content">
+          <div class="dia-header-left">
+            <div class="dia-numero"><span>Día</span><strong>5</strong></div>
+            <div class="dia-info">
+              <span class="dia-fecha">Miércoles 20 de mayo</span>
+              <h3 class="dia-titulo">El amor al ministerio sacerdotal.</h3>
+              <span class="dia-lectura">Lectura del Evangelio según Lc 22, 19</span>
+            </div>
+          </div>
+          <div class="dia-toggle"><i data-lucide="chevron-down"></i></div>
+        </button>
+        <div class="dia-content" id="dia-5-content">
+          <div class="dia-imagen">
+            <img src="assets/novena/dia-5.webp" alt="Imagen alusiva al día 5 de la novena" loading="lazy" onerror="this.src='assets/virgen-maria.webp'">
+          </div>
+          <div class="dia-cuerpo">
+            <div class="dia-section">
+              <h4><i data-lucide="book-open"></i> Lectura bíblica</h4>
+              <p class="cita">Lectura del Evangelio según Lc 22, 19</p>
+              <blockquote><p>Tomó luego pan, y, dadas las gracias, lo partió y se lo dio diciendo: Este es mi cuerpo que es entregado por vosotros; haced esto en recuerdo mío.</p></blockquote>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="quote"></i> Meditación</h4>
+              <div class="meditacion"><p>En el servicio eclesial del ministro ordenado es Cristo mismo quienestá presente a su Iglesia como Cabeza de su cuerpo, Pastor de su rebaño, Sumo Sacerdote del sacrificio redentor, Maes tro de la Verdad. Es lo que la Iglesia expresa al decir que el sacerdote, en virtud del sacramento del Orden actúa in persona Christi Capitis. CIC 1548 Por un infinito e incompresible acto de la misericordia divina, hemos sido llamados a estar muy unidos a nuestros sacerdotes, en quienes reconocemos a un hermano que ha respondido con generosidad al llamado de Dios para ser dispensador de Su misericordia a todo el pueblo. En ellos reconocemos a Jesús que actúa en y a través de ellos, aun en medio de sus limitaciones y debilidades; y por eso les acompañamos con fraternal afecto y caridad. Es a través de ellos que la misericordia llega a todos nosotros por los sacramentos; a través de sus manos consagradas, como por ca nales, la Gracia es derramada en quienes nos acercamos a implorarla. A través de las manos de los sacerdotes cotidianamente ocurre sobre nuestros altares el mayor de los milagros, y es que el pan y el vino se convierten de manera real, en el Cuerpo y la Sa ngre del Señor; también a ellos les ha sido confiado el don de absolver nuestros pecados, y ahí en el confesionario es donde ocurre el milagro de la Divina Misericordia en cada alma que se acerque con sincero arrepentimiento de sus culpas. Debemos aprender a valorar y amar al sacerdote como padre, amigo y hermano, pero sobre todo como quien “ actúa in persona Christi ”. Como miembros de esta comunidad estamos llamados a ofrecer todas nuestras oraciones, sacrificios, penitencia, buenas obras y comuniones, con amor sincero por nuestros sacerdotes. Especialmente rogamos a Dios que se digne bendecir a nuestra Iglesia con muchas y santas vocaciones sacerdotales, fortalezca a los sacerdotes que han respondido a su llamado, les conceda la gracia de la fidelidad y de ser sacerdotes según su corazón, rogando que puedan conducir al pueblo de Dios por el camino de la santidad. También debemos procurar acompañarles en con respeto, cariño y prudencia en su caminar cotidiano, y en la medida de nuestras posibilidades ayudar les en sus necesidades. A este aspecto de nuestra espiritualidad, solemos llamarle “el carisma oculto” porque lo hacemos en silencio y de la manera más discreta posible. Es sin duda una de las más grandes gracias que hemos recibido de Dios, quien nos la ha confiado a través de su Madre Santísima, sin tener nosotros ningún mérito propio. Este llamado lo entendemos como parte integral de nuestro apostolado, a través del cual somos colaboradores de la misión que Jesús encomendó a su Iglesia. Toda nuestra labor por los sacerdotes nace del encuentro íntimo con Jesús, y por lo tanto tiene su fuente originaria en el amor; la misma es una obra deseada por el Señor que nos dice en el evangelio: “Y todo aquel que dé de beber un vaso de agua fresca a uno de estos peque ños, por ser discípulo, os aseguro que no perderá su recompensa” (Mt 10, 42). En los sacerdotes reconocemos las perlas más hermosas del tesoro de la Iglesia, pues aunque tengamos el mayor ardor del mundo por la evangelización y la salvación de las almas, sin el sacerdote nunca podremo s recibir el perdón de nuestros pecados (Jn 20, 23) y mucho menos alimentarnos de l Cuerpo y Sangre del Señor (Lc 22, 19).</p></div>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="hand-heart"></i> Oración del día</h4>
+              <div class="oracion"><p>Oh María, Madre de los sacerdotes, en la misión encomendada a los miembr os del Cuerpo Místico de tu Divino Hijo, son los sacerdotes quienes han recibido el don único de perdonar nuestros pecados y hacer presente a Jesús en la Sagrada Hostia. Tú que eres Madre de Misericordia, alcánzales la gracia de ser imagen viva de aquel q ue llevaste en tu vientre, y que acompañaste hasta depositar su sagrado cuerpo en el sepulcro, para luego experimentar la alegría de su resurrección y ser colaboradora en la misión de la edificación de la Iglesia. Te ofrecemos este Santo Rosario por todos los sacerdotes del mundo, pero muy especialmente por los que hacen vida en nuestra Arquidiócesis.</p></div>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="circle-dot"></i> Rosario</h4>
+              <div class="rosario"><p>Se recitan los misterios correspondientes a cada día, iniciando con la oración del</p></div>
+            </div>
+            <div class="dia-section common-link">
+              <p>Continúa con las <a href="#oraciones-comunes">oraciones comunes de la novena</a> (Acto de Contrición, Invocación al Espíritu Santo, Gozos a María Auxiliadora y Oración final).</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="dia-card" id="dia-6" data-dia="6" data-fecha="2026-05-21">
+        <button class="dia-header" aria-expanded="false" aria-controls="dia-6-content">
+          <div class="dia-header-left">
+            <div class="dia-numero"><span>Día</span><strong>6</strong></div>
+            <div class="dia-info">
+              <span class="dia-fecha">Jueves 21 de mayo</span>
+              <h3 class="dia-titulo">La Divina Misericordia, corazón palpitante del Evangelio</h3>
+              <span class="dia-lectura">Lectura de la Carta a los Efesios 2, 4-5</span>
+            </div>
+          </div>
+          <div class="dia-toggle"><i data-lucide="chevron-down"></i></div>
+        </button>
+        <div class="dia-content" id="dia-6-content">
+          <div class="dia-imagen">
+            <img src="assets/novena/dia-6.webp" alt="Imagen alusiva al día 6 de la novena" loading="lazy" onerror="this.src='assets/virgen-maria.webp'">
+          </div>
+          <div class="dia-cuerpo">
+            <div class="dia-section">
+              <h4><i data-lucide="book-open"></i> Lectura bíblica</h4>
+              <p class="cita">Lectura de la Carta a los Efesios 2, 4-5</p>
+              <blockquote><p>Pero Dios, rico en Misericordia, por el grande amor con que nos amó, estando muertos a causa de nuestros delitos, nos vivificó juntamente con Cristo.</p></blockquote>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="quote"></i> Meditación</h4>
+              <div class="meditacion"><p>El Señor, es un Dios clemente y compasivo, paciente, lleno de amor y fiel.&quot; (Éxodo 34, 6; cf. Éxodo. 34,8-9).Luego veng an y discutamos-dice el Señor &quot; aunque sus pecados sean rojos como la escarlata, Dios los deja blancos como la nieve... (Isaías 1, 18). &quot;El Señor es clemente y compasivo, paciente y rico en amor.&quot; (Salmo 144,8). &quot;Pero cuando llegó la plenitud de los tiempos, Dios envió a su propio hijo, nacido de una mujer, nacido bajo la ley para rescatar a los que se hallaban bajo la ley y hacer que recibiremos la condición de hijos adoptivos de Dios. Y la prueba de que ustedes son hijos es que Dios envío a nuestros corazones el Espíritu de su Hijo que grita: &quot;Abba&quot; es decir, &quot;Padre,&quot; de modo que ya no eres siervo, si no hijo, y como hijo también heredero por la gracia de Dios&quot; (Gálatas 4, 4-7). La Iglesia es consciente de que n ada necesita el hombre como la Divina Misericordia: &quot;ese amor que quiere bien, que compadece, que eleva al hombre por encima de su debilidad, hacialas infinitas alturas de la santidad de Dios&quot; (Juan Pablo II, Cracovia, Polonia, 17 de junio de 1997). Acoge r y hacer conocer la Divina Misericordia, no sólo constituye uno de los pilares fundamentales de la misión que Dios nos ha encomendado, es sobre todas las cosas la manera más efectiva de conocer quién es Dios en su esencia. El Papa Francisco ha afirmado que “el nombre de Dios es Misericordia”, y en la bula de convocatoria al Año Santo de la Misericordia comienza diciendo que “Jesucristo es el rostro de la Misericordia del Padre”, invitándonos a conocer este máximo atributo de Dios e indicando que “la miseri cordia es el corazón palpitante del Evangelio” y que “donde hay misericordia, existe el testimonio irrefutable de que hay unaverdadera vida cristiana”. Por lo tanto no hablamos sólo de una devoción, sino y sobretodo de un atributo divino que define en e sencia q uien es nuestro Padre del Cielo, y define su manera de relacionarnos con Él y nuestro actuar como hijos suyos. Santa Faustina Kowalska por gracia de Dios estaba muy consciente de su debilidad, pequeñez y miseria; ella escribe ampliamente sobre la Divina Misericordia por mandato del Señor quien le dice: “tu misión es escribir todo lo que yo te digo, para que las almas que lo lean consigan valor para acercarse a mí”. Sin duda en el Diario de Santa Faustina encontramos unaverdadera joya de espiritual idad, que tiene una significativa influencia en nuestra manera de vivir como miembros de esta Asociación y que está muy vinculada a nuestra misión. El Señor Jesús nos invita a acercarnos con confianza a la fuente de su Misericordia, por eso es esencial que cada uno de nosotros reconozcamos, al igual que Santa Faustina, nuestros muchos pecados, debilidad es y pobreza; con verdadera contrición y humildad debemos implorar esta Misericordia infinita para nosotros, especialmente a través del sacramento de la confesión, para nuestros hermanos, para nuestra patria y el mundo entero. A través de la Madre de la Misericordia, hemos recibido el carisma de proclamar la Divina Misericordia al mundo, de manera muy concreta nos ha sido encomendada la misión de celebrar el Domingo de la Divina Misericordia con la hoy conocida y tradicional procesión por las calles de nuestra ciudad. Es parte esencial de nuestra misión, ya que hemos sido “misericordiados”, llevar la Misericordia Divina a todos nuestros hermanos. Conscientes de que s ólo somos pequeños siervos que deben disponer la mesa para que el Señor Jesús dispense en abundancia su Misericordia. Esto lo hemos de hacer a través de nuestra oración constante, por medio de la cual imploramos la Misericordia; también difundiendo el mensaje sobre la verdad teológica de que “Dios es Misericordioso” y finalmente poniendo todo nuestro amor y esfuerzo para que cada día de la Misericordia muchos hermanos consigan el valor para acercarse a Jesús y aprendan a confiar en Él. Todo el trabajo que hagamos en dar a conocer la Divina Misericordia, ha de ser hecho con mucha humildad, desinterés, caridad, rectitud de intención y sobre todo movidos únicamente por el anhelo de amar y servir a Dios. Debemos aprender a siempre confiar en ésta Misericordia, que ningún pecado por más grave y grande que sea puede extinguir ni agotar, Dios es nuestro Padre y nos ama tal cual s omos y de manera incondicional. E l Papa Francisco ha repetido incesantemente que “Dios no se cansa nunca de perdonar, somos nosotros quienes nos cansamos de pedir perdón”. Pidamos al Señor que aumente nuestra confianza en Él y profundicemos en la convicció n de que nuestro Padre nos ama y siempre nos espera, como nos lo muestra Jesús en la parábola del hijo pródigo, para estrecharnos a su corazón misericordioso y derramar el bálsamo de su amor para curar todas nuestras heridas. Sólo de la vivencia gozosa de experimentar la Misericordia de Dios, podremos proclamar con autenticidad este mensaje a nuestros hermanos a través de la acción, la palabra y la oración.</p></div>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="hand-heart"></i> Oración del día</h4>
+              <div class="oracion"><p>Oh María, Madre de la Divina Misericordia, te suplicamos que nos concedas la gracia de acoger la Misericordia de Dios en nuestras vidas del mismo modo que lo hiciste tú. Concédenos la gracia de tener unaverdadera y sincera conciencia de nuestra pequeñez y miseria, y animados por tus cuidados maternales acudir incesantemente alas fuentes de la Divina Misericordia para lavar todo nuestro ser y beber con confianza de esta fuente de vida eterna. Madre Misericordiosa te ofrecemos este santo rosario para suplicarte que nos hagas profundamente humildes, y nos dispongas nuestros corazones para que sean auténticas sedes de la Misericordia de Jesús.</p></div>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="circle-dot"></i> Rosario</h4>
+              <div class="rosario"><p>Se recitan los misterios correspondientes a cada día, iniciando con la oración del</p></div>
+            </div>
+            <div class="dia-section common-link">
+              <p>Continúa con las <a href="#oraciones-comunes">oraciones comunes de la novena</a> (Acto de Contrición, Invocación al Espíritu Santo, Gozos a María Auxiliadora y Oración final).</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="dia-card" id="dia-7" data-dia="7" data-fecha="2026-05-22">
+        <button class="dia-header" aria-expanded="false" aria-controls="dia-7-content">
+          <div class="dia-header-left">
+            <div class="dia-numero"><span>Día</span><strong>7</strong></div>
+            <div class="dia-info">
+              <span class="dia-fecha">Viernes 22 de mayo</span>
+              <h3 class="dia-titulo">Amar la voluntad de Dios.</h3>
+              <span class="dia-lectura">Lectura del Evangelio según San Juan 6, 39-40</span>
+            </div>
+          </div>
+          <div class="dia-toggle"><i data-lucide="chevron-down"></i></div>
+        </button>
+        <div class="dia-content" id="dia-7-content">
+          <div class="dia-imagen">
+            <img src="assets/novena/dia-7.webp" alt="Imagen alusiva al día 7 de la novena" loading="lazy" onerror="this.src='assets/virgen-maria.webp'">
+          </div>
+          <div class="dia-cuerpo">
+            <div class="dia-section">
+              <h4><i data-lucide="book-open"></i> Lectura bíblica</h4>
+              <p class="cita">Lectura del Evangelio según San Juan 6, 39-40</p>
+              <blockquote><p>Y esta es la voluntad del que me ha enviado; que no pierda nada de lo que él me ha dado, sino que lo resucite el último día. Porque esta es la voluntad de mi Padre: que todo el que vea al Hijo y crea en él, tenga vida eterna y que yo le resucite el último día.</p></blockquote>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="quote"></i> Meditación</h4>
+              <div class="meditacion"><p>La voluntad de nuestro Padre es “que todos los hombres [...] se salven y lleguen al conocimiento pleno de la verdad” ( 1 Tm 2, 3-4). Sabemos, además, que Dios dispone, todas las cos as para el bien de los que lo aman, de aquellos que él llamó según su designio (Rom 8, 28). Conscientes de que hemos sido llamados por Dios, por designio de su amor y misericordia, debemos cultivar incesantemente nuestra confianza plena en la voluntad del Padre. “¿Quién de ustedes, cuando su hijo le pide pan, le da una piedra? ¿O si le pide un pez, le da una serpiente? Si ustedes, que son malos, saben dar cosas buenas a sus hijos, ¡cuánto más el Padre celestial dará cosas buenas a aquellos que se las pidan! ” (Mt 7, 9-11). Tenemos un Padre bueno y misericordioso, que nos ama con locura, “Dios est á enamorado de nosotros, somos su sueño de amor ” (Papa Francisco), pero esta verdad necesitamos no sólo aceptarla y entenderla con nuest ro intelecto y voluntad, sino que debemos experimentarla para que se haga vida en nosotros. Podríamos comparar la necesidad de hacer vida esta realidad con la s ensación que tenemos durante un día de calor intenso y pensamos en lo refrescante que sería lanzarnos a una piscina, sin embargo no es lo mismo p ensarlo que efectivamente sumergirnos en ella. En la medida en que seamos capaces de renunciar a nuestra propia voluntad para en su lugar aceptar la de Dios, nos estaremos comportando como verdaderos hijos suyos. Esta Voluntad la encontramos expresada en los mandamientos, las directrices de nuestros superiores, los deberes propios del estado de vida y en reconocidas inspiraciones del Espíritu Santo. La voluntad de Dios siempre será lo mejor para nosotros pues no surge del deseo egoísta e imp erfecto de los hombres, sino de la expresión plena del Padre. Necesitamos aprender, con el auxilio de la Santísima Virgen y del Espíri tu Santo, a descubrir la voluntad de Dios en todo cuanto nos acontece en la vida cotidiana pues “¿No se venden acaso cinco pájaros por dos monedas? Sin embargo, Dios no olvida a ninguno de ellos. Ustedes tienen contados todos sus cabellos: no te man, porque valen más que muchos pájaros ” (Lc 12, 6-7). “No tomen como modelo a este mundo. Por el contrario, transfórmense interiormente renovando su mentalidad, a fin de que puedan discernir cuál es la voluntad de Dios: lo que es bueno, lo que le agrada, lo perfecto ” (Rm 12, 2). “La voluntad de Dios es que sean santos, que se abstengan del pecado ” (1 Tes 4, 3). Jesús con sus pala bras y acciones es la expresión del perfecto y continuo cumplimiento de la voluntad de su Padre, “porque he bajado del cielo, no para hacer mi voluntad, sino la del que me envió ” (Jn 6, 38), y en consonancia con esto obedeció h asta el extremo y “se humilló hasta aceptar por obediencia la muerte, y muerte de cruz ” (Fil 2, 8), pues confiaba plenamen te en su Padre, y nos mostró con ello que la muerte nunca tiene la última palabra, y que los sufrimientos temporales nos purifican y ayudan a crecer en el amor a Dios, pues también llegado el día resucitaremos con Él (Jn 4, 40). Todas las acciones y palabras de Jesús, están impregnadas de misericordia. En el diario de Santa Faus tina encontramos reiterados llamados de Jesús a crecer en la actitud de confianza en Dios: “Las gracias de mi misericordia se toman con un solo recipiente y éste es la confianza. Cuanto más confíe un alma, tanto más recibirá. Las almas que confían sin límites son mi gran consuelo, porque en tales almas vierto todos los tesoros de mis gracias. Me alegro de que pidan mucho, porque mi deseo es dar mucho, muchísimo. Me pongo triste, en cambio, si las almas piden poco, estrechan sus corazones ” (Diario 1578). Aunque por naturaleza solemos afer rarnos a nuestras seguridades, y contar sólo con aquello que podemos controlar, si abrimos nuestros corazones a la voluntad del Padre, aprenderemos a confiar sin l ímites, pues nuestra “esperanza no quedará defraudada, porque el amor de Dios ha sido derramado en nuestros corazones por el Espíritu Santo, que nos ha sido dado. En efecto, cuando todavía éramos débiles, Cristo, en el tiempo señalado, murió por los pecadores. Difícilmente se encuentra alguien que dé su vida por un hombre justo; tal vez alguno sea capaz de morir por un bienhechor. Pero la prueba de que Dios nos ama e s que Cristo murió por nosotros cuando todavía éramos pecadores ” (Rm 5, 5-8). Santa Faustina nos muestra con sencillez como alcanzar la santidad, en su diario apuntó: “Ni gracias, ni revelaciones, ni éxtasis, ningún otro don concedido al alma la hace perfecta … Mi santidad y perfección consisten en una estrecha unión de mi voluntad con la voluntad de Dios ” (Diario 1107).</p></div>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="hand-heart"></i> Oración del día</h4>
+              <div class="oracion"><p>Oh Virgen Inmaculada, tu docilidad a la voluntad de Dios nos enseña el ca mino de la confianza ilimitada que tiene un niño pequeño que se duerme plácidamente en los brazos de su Padre. Al aceptar que Jesús se encarnara en t u seno, se abrieron para la humanidad las puertas de la salvación. Enséñanos Madre amorosa, a confiar ilimitadamente en Dios, aun cuando las circunstancias sean adversas y humanamente no encontremos salidas a ellas; alcánzanos la gracia de poder decir siempre como tú “Yo soy la servidora del Señor, que se cumpla en mí lo que has dicho”, y así dar paso a su obra en nosotros y a través de nosotros. María Auxiliadora, te ofrecemos este rosario para suplicarte que con tu auxilio podamos decir siempre a nuestro Padre Celestial como Jesús: “no se haga mi voluntad, sino la tuya ”. Se re citan los misterios correspondientes a cada día, iniciando con la oración del Credo.</p></div>
+            </div>
+            <div class="dia-section common-link">
+              <p>Continúa con las <a href="#oraciones-comunes">oraciones comunes de la novena</a> (Acto de Contrición, Invocación al Espíritu Santo, Gozos a María Auxiliadora y Oración final).</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="dia-card" id="dia-8" data-dia="8" data-fecha="2026-05-23">
+        <button class="dia-header" aria-expanded="false" aria-controls="dia-8-content">
+          <div class="dia-header-left">
+            <div class="dia-numero"><span>Día</span><strong>8</strong></div>
+            <div class="dia-info">
+              <span class="dia-fecha">Sábado 23 de mayo</span>
+              <h3 class="dia-titulo">La alegría de la Caridad.</h3>
+              <span class="dia-lectura">Lectura del Evangelio según San Mateo 25, 31-40</span>
+            </div>
+          </div>
+          <div class="dia-toggle"><i data-lucide="chevron-down"></i></div>
+        </button>
+        <div class="dia-content" id="dia-8-content">
+          <div class="dia-imagen">
+            <img src="assets/novena/dia-8.webp" alt="Imagen alusiva al día 8 de la novena" loading="lazy" onerror="this.src='assets/virgen-maria.webp'">
+          </div>
+          <div class="dia-cuerpo">
+            <div class="dia-section">
+              <h4><i data-lucide="book-open"></i> Lectura bíblica</h4>
+              <p class="cita">Lectura del Evangelio según San Mateo 25, 31-40</p>
+              <blockquote><p>Cuando el Hijo del Hombre vuelva en su gloria, acompañado de todos sus ángeles, se sentará sobre su trono de gloria, y todas las naciones serán congregadas delante de Él, y separará a los hombres, unos de otros, como el pastor separalas ovejas de los machos cabríos. Y colocará las ovejas a su derecha, y los machos cabríos a su izquierda. Entonces el rey dirá a los de su derecha: “Vengan, benditos de mi Padre, tomen posesión del reino preparado para ustedes desde la fundación del mundo. Porque tuve hambre, y me dieron de comer; tuve sed, y me dieron de beber; era forastero y me recibieron; estaba desnudo, y me vistieron; estaba enfermo, y me visitaron; estaba preso, y vinieron a verme”. Entonces los justos le responderán, diciendo: “Señor, ¿cuándo te vimos hambri ento, y te dimos de comer, o sediento, y te dimos de beber? ¿Cuándo te vimos forastero, y te acogimos; o desnudo, y te vestimos? ¿Cuándo te vimos enfermo o en la cárcel, y fuimos a verte? Y respondiendo el rey les dirá: “En verdad, les digo: en cuanto lo hicieron a uno solo, el más pequeño de estos mis hermanos, a Mí lo hicieron”.</p></blockquote>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="quote"></i> Meditación</h4>
+              <div class="meditacion"><p>“La Iglesia tiene la misión de anunciar la misericordia de Dios, corazón palpitante del Evangelio, que por su medio debe alcanzar la mente y el corazón de toda persona. La Esposa de Cristo hace suyo el comportamiento del Hijo de Dios que sale a encontrar a todos, sin excluir ninguno. En nuestro tiempo, en el que la Iglesia está comprometida en la nueva evangelización, el tema de la misericordia exige ser propuest o unavez más con nuevo entusiasmo y con una renovada acción pastoral. Es determinante para la Iglesia y para la credibilidad de su anuncio que ella viva y testimonie en primera persona la misericordia. Su lenguaje y sus gestos deben transmitir misericordi a para penetrar en el corazón de las personas y motivarlas a reencontrar el camino de vuelta al Padre. La primera verdad de la Iglesia es el amor de Cristo. De este amor, que llega hasta el perdón y al don de sí, la Iglesia se hace sierva y mediadora ante los hombres. Por tanto, donde la Iglesia esté presente, allí debe ser evidente la misericordia del Padre. En nuestras parroquias, en las comunidades, en las asociaciones y movimientos, en fin, dondequiera que haya cristianos, cualquiera debería poder encon trar un oasis de misericordia ” (Misericordi ae Vultus 12). Vivir la caridad no es una mera exigencia de nuestra vida cristiana, podríamos decir más bien que es una consecuencia de la vida cristiana auténtica. Si nuestra relación con Dios y la Santísima Virgen no nos lleva a vivir el amor y la misericordia activa por el prójimo, es necesario que revisemos nuestra vida interior, pues cuando vivimos auténticamente unidos a Dios, es inevitable que de esta unión se produzca el fruto de la caridad. Si nosotros creemos vivir de acuerdo a los principios de nuestra espiritualidad, tales como la confesión frecuente y la comunión, la lectura asidua de la Sagrada Escritura, la oración personal y comunitaria, el sacrificio y la penitencia, el amor a la Iglesia, al Santo Padre y los sacerdotes, si creemos obedecer la voluntad de Dios, pero no tenemos caridad, de nada nos sirve, algo estamos haciendo mal. Es necesario tener clara la diferencia entre “cumplir” una serie de lineamientos y “vivir” conforme al Espíritu de Dios que tiene la facultad de transformarnos interiormente d e manera paulatina y progresiva, para llevarnos a ser cada vez más parecidos a nuestro Padre del cielo. Estamos llamados a amar a todos por igual, blancos y negros, ricos y pobres; sin distinguir ni discriminar a nadie, sin importar su condición. Debemos aprender a ver en cada hermano la imagen viva de Cristo quien se encuentra en cada persona, cuya dignidad no pierde, aunque la imagen según la cual fue creado se encuentre deteriorada. Al ejercer la misericordia activa por el prójimo debemos tener en cuenta que no la hacemos desde una condición de superioridad, sino desde la posición del siervo h umilde que se siente agradecido con su Señor, quien le invita y permite servirle en cada hermano. Cuando obramos con misericordia somos enriquecidos por el encuentro con Cristo quien vive en el prójimo. Jesús habló ampliamente a Santa Faustina sobre cómo o brar con verdadera caridad: “ Exijo de ti – le dijo-obras de misericordia que deben surgir del amor hacia Mí. Debes mostrar misericordia al prójimo siempre y en todas partes. No puedes dejar de hacerlo ni excusarte ni justificarte. Te doy tres formas de e jercer misericordia al prójimo: la primera – la acción, la segunda – la palabra, la tercera – la oración. En estas tres formas está contenida la plenitud de la misericordia y es el testimonio irrefutable del amor hacia Mi” (Diario 742). El Señor espera de nosotros que hagamos al menos una obra de misericordia al día, si seguimos sus deseos podremos darnos cuenta de que es sumamente sencillo hacerlo por medio de cualquiera de estas tres formas. Para obrar con verdadera misericordia hacia nuestros hermanos, necesitamos dejarnos transformar por el amor misericordioso de Dios, sólo así aprenderemos a encontrarlo en el prójimo, sobreponiéndonos a nuestro egoísmo, y nacerá de manera auténtica la alegría de poder servirle. Nuestro obrar ha de ser siempre discreto, humilde y lleno de gratitud y rectitud de intención; sin desanimarnos por nuestras debilidades y confiando en el auxilio y la providencia Divina que siempre completa con creces lo mucho que pueda faltar a nuestros esfuerzos. Lo que finalmente da verdadero valor a nuestras obras es el amor con el que las hacemos, no importa si son grandes o pequeñas obras. Toda ofrenda hecha a Dios con amor adquiere un valor infinito, pues Dios que es infinito la recibe y por lo tanto le pertenece. Por esto es importante que “cada cual dé según el dictamen de su corazón, no de mala gana ni forzado, pues: Dios ama al que da con alegría” (2 Corintios 9, 7 ), “es preciso recordar las palabras del Señor Jesús: «La felicidad está más en dar que en recibir»” (Hch 20, 35). Ojalá que al igual que a los primeros cristianos se nos reconozca por el amor que nos tengamos entre nosotros, y por el amor con el que tratemos a nuestros demás hermanos. Este es el signo distintivo del verdadero cristia no, así nos lo dice el Señor en el Evangelio de San Juan: “ En esto todos reconocerán que ustedes son mis discípulos: en el amor que se tengan los unos a los otros” (Jn 13, 35).</p></div>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="hand-heart"></i> Oración del día</h4>
+              <div class="oracion"><p>Oh María Auxiliadora, Madre del Amor, tú te dejaste poseer plenamente por Dios, por eso eres la “llena de Gracia”, te rogamos que nos guíes con tu cetro maternal. Enséñanos a amar a todos con el mismo amor que nos ama Dios. Alcánzanos la gracia de ser dóciles y fieles a la acción del Espíritu Santo en nuestras vidas, para que podamos ser misericordiosos al pensar, hablar y actuar. Danos un corazón generoso como el tuyo para que aprendamos también perdonar y amar a aquellos que nos injurian y persiguen, y así imitando a Jesús, glorifiquemos al Padre que está en los cielos a través de obras dignas de su amor. Te ofrecemos esta corona de rosas para suplicarte que con ellas adornes el trono de nuestro Padre en e l cielo, y a cambio nos alcances la gracia de que nuestros corazones de piedra sean transformados por el Amor.</p></div>
+            </div>
+            <div class="dia-section common-link">
+              <p>Continúa con las <a href="#oraciones-comunes">oraciones comunes de la novena</a> (Acto de Contrición, Invocación al Espíritu Santo, Gozos a María Auxiliadora y Oración final).</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="dia-card" id="dia-9" data-dia="9" data-fecha="2026-05-24">
+        <button class="dia-header" aria-expanded="false" aria-controls="dia-9-content">
+          <div class="dia-header-left">
+            <div class="dia-numero"><span>Día</span><strong>9</strong></div>
+            <div class="dia-info">
+              <span class="dia-fecha">Domingo 24 de mayo · Pentecostés</span>
+              <h3 class="dia-titulo">La Consagración Total a María</h3>
+              <span class="dia-lectura">Lectura del Evangelio según San Lucas 1, 46-50</span>
+            </div>
+          </div>
+          <div class="dia-toggle"><i data-lucide="chevron-down"></i></div>
+        </button>
+        <div class="dia-content" id="dia-9-content">
+          <div class="dia-imagen">
+            <img src="assets/novena/dia-9.webp" alt="Imagen alusiva al día 9 de la novena" loading="lazy" onerror="this.src='assets/virgen-maria.webp'">
+          </div>
+          <div class="dia-cuerpo">
+            <div class="dia-section">
+              <h4><i data-lucide="book-open"></i> Lectura bíblica</h4>
+              <p class="cita">Lectura del Evangelio según San Lucas 1, 46-50</p>
+              <blockquote><p>Y dijo María: «Engrandece mi alma al Señor y mi espíritu se alegra en Dios mi salvador porque ha puesto los ojos en la humildad de su esclava, por eso desde ahora todas las generaciones me llamarán bienaventurada, porque ha hecho en mi favor maravillas el Poderoso, Santo es su nombre y su misericordia a lcanza de generación en generación a los que le temen.</p></blockquote>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="quote"></i> Meditación</h4>
+              <div class="meditacion"><p>San Agustín al meditar sobre la participación de la Santísima Virgen María en el misterio de la redención afirmó que: “Ella concibió p rimero en su corazón y después en su vientre”. María escucha plenamente, acoge y medita la palabra de Dios dentro de su corazón para dar fruto, así lo afirma el evangelio: “ Mientras tanto, María conservaba estas cosas y las meditaba en su corazón” (Lc 2, 19). Esta palabra, que requiere fe, disponibilidad, humildad, prontitud, es aceptada tal como se deben acoger las cosas de Dios. El Papa Pio IX definió el dogma de la Inmaculada Concepción de la Santísima Virgen María de esta manera: &quot;...declaramos, proclamam os y definimos que la doctrina que sostiene que la beatísima Virgen María fue preservada inmune de toda mancha de la culpa original en el primer instante de su concepción por singular gracia y privilegio de Dios omnipotente, en atención a los méritos de Cristo Jesús Salvador del género humano, está revelada por Dios y debe ser por tanto firme y constantemente creída por todos los fieles...&quot; (Bula Ineffabilis Deus, 8 de diciembre de 1854). En consecuencia podemos afirmar que el Inmaculado Corazón de María permaneció limpio de cualquier mancha de pecado y lleno plenamente de Dios; fue en su corazón materno donde en primer lugar el Verbo de Dios consiguió su morada, y luego en su vientre. San Padre Pío de Pietrelcina en una ocasión fue consultado sobre su insistenci a en que los fieles se consagraran al corazón de esta Madre, a lo que respondió que lo hacía “porque es el único lugar donde Satanás no puso un pie y nunca llegará, para atrapar las almas que entran allí.&quot; Como cristianos estamos llamados a imitar y seguir las palabras y acciones de Jesús, quien en todo hizo la voluntad del Padre (Jn 6, 38). Él es el camino, la verdad y la vida; nadie va al Padre si no es por él (Jn 14, 6). Dios quiso venir a nosotros a través de María, haciéndose hombre en su seno y tomando su cuerpo y sangre de ella. Quiso depender y vivir sujeto a ella y San José ( Lc 2, 51) durante la mayor parte de su vida, y luego por su intercesión hizo su primer milagro aunque aún no había llegado su hora (Jn 2, 4). Desde la Cruz recibió la misión de ser Madre de todos los miembros de la Iglesia naciente (Jn 19, 26-27), la cual animó y acompañó du rante toda su vida hasta la asunción al cielo ( Hch 1, 14). En resumen podemos decir que Jesús quiso hacerse todo de María, pues ella era toda de Él. Finalizando nuestra preparación para consagrarnos a la Santísima Virgen, al considerar el camino que Dios nos propone para alcanzar la santidad en esta comunidad, podríamos sentirnos abrumados ante el reconocimiento de nuestra debilidad y miseria, pues es sencillo comprender que por nuestro propi o esfuerzo y mérito es prácticamente imposible conseguirlo. Sin embargo Dios, que es rico en misericordia y nos ama de manera incondicional, nos invita a entrar en el Arca de la Nueva Alianza, para que ella nos conduzca a través de este camino. Es voluntad de Dios que así como su Hijo vino a nosotros a través de María, ahora nosotros vayamos a él a través de ella. Por lo tanto como miembros de esta comunidad estamos llamados a confiarnos plenamente, totalmente y sin reservas a esta Madre de Misericordia, al igual que Jesús lo hizo; pues al hacernos todos suyos, ella será toda nuestra y nos hará todos de Jesús. Si somos fieles a esta consagración y perseveramos con humildad, docilidad, rectitud de intención y confianza, sin duda alguna nuestra amada Madre, la más buena, tierna y dulce de todas las madres, no permitirá que ningún miembro de esta Asociación se pierda, sino que nos alcanzará a todos la gracia de llegar al cielo tomados de su mano. Durante sus apariciones en Fátima la Virgen dijo a Lucía: “Mi Corazón Inmaculado será tu refugio y el camino que te conducirá a Dios”; en otra ocasión también dijo a los pastorcitos: “Dios quiere establecer en el mundo la devoción a mi Inmaculado Corazón. Aquíenes la abracen les prometo la sa lvación y sus almas serán amadas por Dios como flores puestas por mí para adornar su trono”. Desde el año 19 42 los Papas han hecho sucesivamente el acto de consagración del mundo al Inmaculado Corazón de María, confiando así a la Virgen el destino de la Iglesia y de la humanidad. En particular e l Papa Pablo VI en su exhortación apostólica “Signum Magnum” invitó a todas las naciones, d iócesis, movimientos, familias y laicos de todo el mundo a consagrarse al Inmaculado Corazón de María. Esto es garantía no sólo del pod er que tiene esta consagración, sino de que es una obra que Dios ha dado a la Iglesia como medio eficaz para alcanzar la más íntima unión con Él. San Juan Pablo II expresó que: “De María aprendemos a amar a Cristo, su Hijo y el Hijo de Dios… De ella aprendemos a ser siempre fieles, a confiar en que la Palabra de Dios se cumplirá en nosotros, que nada es imposible para Dios.” Son incontables los santos de nuestra iglesia que profesaron su amor profundo y devoción a la Santísima Virgen, por su mediación la cristiandad ha sido preservada de los más grandes peligros, por ella batallas que se consideraban imposibles de ganar, han sido vencidas. Ella ha logrado que sacerdotes de satanás y los pecadores más empedernidos hayan llegado alas cumbres d e la santidad, ella ha logrado detener las guerras y cambiar el curso de la historia de las naciones. Ella por su profunda humildad y estando totalmente habitada por Dios, aplasta con su delicado pie la ca beza de la serpiente maligna. Ella es la salud de nuestra enfermedad, pero por sobre to das las cosas es vida, dulzura y esperanza nuestra, Madre de Dios y ma dre de “María, camino a Jesús ”.</p></div>
+            </div>
+            <div class="dia-section">
+              <h4><i data-lucide="hand-heart"></i> Oración del día</h4>
+              <div class="oracion"><p>María Auxiliadora, Dios te ha enviado a nuestras vidas para recogernos y llevarnos al encuentro vivo Él, y a abrir nuestros ojos alas realidades sobrenaturales. Tú como madre amorosa, en el Cuerpo Místico de Cristo eres el corazón, cuya función es llevar la gracia de Dios a todos sus miembros. Tú has querido derramar sobre nosotros con abundancia los tesoros de la gracia que te han sido confiados, para ayudaros a permanecer unidos a Jesús y dar frutos abundantes para la gloria del Padre Celestial. Te suplicamos que a través del Santo Rosario que nos tomes de la mano durante toda nuestra vida y nos preserves de la corrupción y el pecado, para que fieles a nuestra vocación podamos caminar con pasos firmes hacia la santidad. Te ofrecemos este rosario para suplicarte que todos tus hijos de “María, camino a Jesús ” alcancemos por tu mediación la gracia de llegar de tu mano a la gloria celestial.</p></div>
+            </div>
+            <div class="dia-section common-link">
+              <p>Continúa con las <a href="#oraciones-comunes">oraciones comunes de la novena</a> (Acto de Contrición, Invocación al Espíritu Santo, Gozos a María Auxiliadora y Oración final).</p>
+            </div>
+          </div>
+        </div>
+      </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ORACIONES COMUNES -->
+    <section class="section-padding oraciones-comunes" id="oraciones-comunes" style="background: var(--clr-pale-blue);">
+        <div class="container" style="max-width: 950px;">
+            <h2 class="section-title text-center">Oraciones comunes a todos los días</h2>
+            <p class="section-subtitle text-center">Se rezan antes y después de la meditación de cada día.</p>
+
+            <div class="oracion-bloque">
+                <h3><i data-lucide="cross"></i> Acto de Contrición</h3>
+                <p>Jesús, mi Señor y Redentor, yo me arrepiento de todos los pecados que he cometido hasta hoy, y me pesa de todo corazón, porque con ellos he ofendido a un Dios tan bueno. Propongo firmemente no volver a pecar y confío que por tu infinita misericordia me has de conceder el perdón de mis culpas y me has de llevar a la vida eterna. Amén.</p>
+            </div>
+
+            <div class="oracion-bloque">
+                <h3><i data-lucide="flame"></i> Invocación al Espíritu Santo</h3>
+                <p>Oh Espíritu Santo, amor del Padre y del Hijo, inspírame siempre lo que debo pensar, lo que debo decir, cómo debo decirlo, lo que debo callar, cómo debo actuar, lo que debo hacer y evitar, para gloria de Dios, bien de las almas y mi propia santificación. Espíritu Santo, dame agudeza para entender, capacidad para retener, método y facultad para aprender, sutileza para interpretar, gracia y eficacia para hablar. Dame acierto al empezar, dirección al progresar y perfección al acabar. Amén.</p>
+            </div>
+
+            <div class="oracion-bloque">
+                <h3><i data-lucide="music"></i> Gozos a María Auxiliadora</h3>
+                <details class="gozos-toggle">
+                    <summary>Mostrar los 12 gozos</summary>
+                    <div class="gozos-content">
+                        <div class="gozo-estrofa"><p class="estrofa">1 A Ti, cuya potencia del sarraceno impío venciendo el poderío salvo la cristiandad; rogamos que hoy las salves del vicio y la mentira, de Dios calma la ira, destruye la maldad.</p><p class="respuesta">R/ Consuelo del cristiano María Auxiliadora Al alma que te implora escucha con piedad.</p></div><div class="gozo-estrofa"><p class="estrofa">2 La nave de San Pedro en esta mar bravía con mano fuerte guía al puerto hasta llegar; sostén al gran piloto protege al Padre Santo, sobre él tiende tu manto que es manto tutelar.</p><p class="respuesta">R/ Consuelo del cristiano María Auxiliadora Al alma que te implora escucha con piedad. 3 confunde a los malvados que, dueños de la tierra, a Cristo hacen la guerra siguiendo a Lucifer; tu cetro poderoso derrote sus legiones; ondulen tus pendones triunfantes por doquier. R/Consuelo del cristiano María Auxiliadora Al alma que te implora escucha con piedad.</p></div><div class="gozo-estrofa"><p class="estrofa">4 Cual planta delicada que la corriente mece en este mundo crece la tierna juventud; ¡Oh Madre!, no permitas que se aleje su belleza concédele pureza y amor a la virtud.</p><p class="respuesta">R/ Consuelo del cristiano María Auxiliadora Al alm a que te implora escucha con piedad.</p></div><div class="gozo-estrofa"><p class="estrofa">5 Enséñale amorosa los místicos raudales, de vida manantiales, que brotan del altar; condúcela al banquete de santidad venero, y guste del Cordero que es célico manjar.</p><p class="respuesta">R/ Consuelo del cristiano María Auxiliadora Al alma que te implora escucha con piedad.</p></div><div class="gozo-estrofa"><p class="estrofa">6 Acude en mi socorro, ¡Oh Virgen! poderosa si pérfida me acosa maligna tentación; ahuyenta del demonio el silbo traicionero. Servirte sólo quiero, te doy mi corazón.</p><p class="respuesta">R/ Consuelo del cristiano María Auxiliadora Al alma que te implora escucha con piedad.</p></div><div class="gozo-estrofa"><p class="estrofa">7 Alabarte por siempre, auxilio del cristiano. La lengua del humano, y el alto serafín; Tu nombre lo repitan, los ecos del torrente y en alas del ambiente resuene en el confín.</p><p class="respuesta">R/ Consuelo del cristiano María Auxiliadora Al alma que te implora escucha con piedad.</p></div><div class="gozo-estrofa"><p class="estrofa">8 Inclínense los cielos al ver tu hermoso talle, la palma allá en el valle inclínese también; los hombres te saluden tres veces cada día y en grata melodía te den el parabién.</p><p class="respuesta">R/ Consuelo del cristiano María Auxiliadora Al alma que te implora escucha con piedad.</p></div><div class="gozo-estrofa"><p class="estrofa">9 Las súplicas atiende de los fieles devotos, despacha nuestro votos ¡Oh Madre de bondad; la gracia que te imploro otórgame clemente; de dones eres fuente y fuente de piedad.</p><p class="respuesta">R/ Consuelo del cristiano María Auxiliadora Al alma que te implora escucha con piedad.</p></div><div class="gozo-estrofa"><p class="estrofa">10 Jamás se oyó del mundo en la extendida esfera que alguno de Ti acudiera sin ver tu compasión; por eso hoy a tu trono me llega con confianza, pues sé que mi esperanza no encierra una ilusión.</p><p class="respuesta">R/ Consuelo del cristiano María Auxiliadora Al alma que te implora escucha con piedad.</p></div><div class="gozo-estrofa"><p class="estrofa">11 Del cielo la vereda enséñame cual faro; feliz bajo tu amparo mi vida ha de pasar; sin miedo alas borrascas iré cual navecilla en la celeste orilla tu rostro a contemplar.</p><p class="respuesta">R/ Consuelo del cristiano María Auxiliadora Al alma que te implora escucha con piedad.</p></div><div class="gozo-estrofa"><p class="estrofa">12 Mas antes en el día de mi postrera hora María Auxiliadora, tu auxilio invocaré; y entonces confiado envuelto entre tu manto con sueño dulce y santo en paz me dormiré.</p><p class="respuesta">R/ Consuelo del cristiano María Auxiliadora Al alma que te implora escucha con piedad.</p></div>
+                    </div>
+                </details>
+            </div>
+
+            <div class="oracion-bloque">
+                <h3><i data-lucide="heart"></i> Oración final</h3>
+                <p>Bendita sea tu pureza, y eternamente lo sea, pues todo un Dios se recrea en tu graciosa belleza. A ti, celestial princesa, Virgen sagrada, María, te ofrezco desde este día alma, vida y corazón. Mírame con compasión, no me olvides, Madre mía. Y dame tu santa bendición que recibo en el nombre del Padre, del Hijo y del Espíritu Santo. Amén.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONSAGRACIÓN -->
+    <section class="section-padding seccion-consagracion">
+        <div class="container" style="max-width: 800px; text-align:center;">
+            <i data-lucide="crown" style="width:60px; height:60px; color: var(--clr-primary-gold); margin-bottom:1rem;"></i>
+            <h2 class="section-title text-center" style="margin: 0 auto 1.5rem;">Solemnidad y Consagración</h2>
+            <p style="font-size:1.1rem; color: var(--clr-gray);">El <strong>lunes 25 de mayo de 2026</strong> celebraremos la solemnidad de María Auxiliadora con la <strong>Consagración Total</strong>. Te invitamos a sumarte y vivir esta novena como camino interior de preparación.</p>
+        </div>
+    </section>
+</main>
+
+<app-footer base-path="./"></app-footer>
+<script src="script.js"></script>
+<script src="js/novena.js"></script>
+</body>
+</html>

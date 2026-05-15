@@ -1,0 +1,555 @@
+/* ============================================================
+   Novena a María Auxiliadora — estilos específicos
+   Hereda variables de style.css
+   ============================================================ */
+
+.page-novena main { background: var(--clr-gray-light); }
+
+/* --- HERO ajustes --- */
+.novena-hero { position: relative; overflow: hidden; }
+.novena-hero .hero-bg { z-index: 0; }
+.novena-hero .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+.novena-hero .hero-overlay { z-index: 1; }
+.novena-hero .hero-content { position: relative; z-index: 2; }
+
+.novena-hero .hero-title span {
+    font-size: 5.5rem;
+    line-height: 1;
+}
+.novena-hero .hero-actions {
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+}
+.novena-hero .hero-actions .btn-primary,
+.novena-hero .hero-actions .btn-secondary {
+    gap: 0.6rem;
+}
+.novena-hero .hero-actions i {
+    width: 20px; height: 20px;
+}
+
+/* --- INTRO --- */
+.novena-intro .intro-card {
+    background: var(--clr-white);
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    position: relative;
+    border-top: 5px solid var(--clr-primary-gold);
+}
+.novena-intro .intro-icon {
+    width: 50px; height: 50px;
+    color: var(--clr-primary-gold);
+    margin: 0 auto 1rem;
+    display: block;
+}
+.novena-intro p {
+    font-size: 1.1rem;
+    color: var(--clr-gray);
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+.novena-intro p strong { color: var(--clr-primary-blue); }
+
+.aviso-pentecostes {
+    margin-top: 2rem;
+    background: linear-gradient(135deg, rgba(240,196,61,0.12), rgba(112,184,223,0.12));
+    border-left: 4px solid var(--clr-primary-gold);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    text-align: left;
+    font-size: 0.95rem;
+    color: var(--clr-dark);
+}
+.aviso-pentecostes i { color: var(--clr-primary-gold); flex-shrink: 0; margin-top: 3px; }
+
+/* --- BARRA DEL DÍA ACTUAL --- */
+.dia-actual-bar {
+    background: linear-gradient(135deg, var(--clr-primary-blue) 0%, #2557C7 100%);
+    color: var(--clr-white);
+    padding: 1rem 0;
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 80px;
+    z-index: 50;
+}
+.dia-actual-bar .bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    font-size: 0.98rem;
+}
+.dia-actual-bar strong { color: var(--clr-primary-gold); }
+.bar-pulse {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--clr-primary-gold);
+    box-shadow: 0 0 0 0 rgba(240,196,61,0.7);
+    animation: pulse-gold 1.8s infinite;
+}
+@keyframes pulse-gold {
+    0% { box-shadow: 0 0 0 0 rgba(240,196,61,0.7); }
+    70% { box-shadow: 0 0 0 12px rgba(240,196,61,0); }
+    100% { box-shadow: 0 0 0 0 rgba(240,196,61,0); }
+}
+.dia-actual-bar .btn-primary {
+    background: var(--clr-primary-gold);
+    color: var(--clr-dark);
+}
+.dia-actual-bar .btn-primary:hover { background: var(--clr-white); }
+
+/* --- LISTA DE DÍAS --- */
+.dias-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 2rem;
+}
+
+.dia-card {
+    background: var(--clr-white);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: var(--transition);
+    border-left: 5px solid var(--clr-pale-blue);
+    scroll-margin-top: 140px;
+}
+.dia-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+.dia-card.is-today {
+    border-left-color: var(--clr-primary-gold);
+    box-shadow: 0 10px 30px rgba(240,196,61,0.25);
+}
+.dia-card.is-today .dia-numero {
+    background: linear-gradient(135deg, var(--clr-primary-gold), #C9951A);
+    color: var(--clr-white);
+}
+.dia-card.is-today .dia-numero span { color: rgba(255,255,255,0.85); }
+.dia-card.is-past { opacity: 0.78; }
+.dia-card.is-future .dia-titulo { color: var(--clr-gray); }
+
+/* HEADER (botón clickable) */
+.dia-header {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.5rem 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    color: inherit;
+}
+.dia-header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
+}
+.dia-numero {
+    background: var(--clr-pale-blue);
+    color: var(--clr-primary-blue);
+    border-radius: 12px;
+    padding: 0.6rem 1rem;
+    text-align: center;
+    min-width: 78px;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+.dia-numero span {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+.dia-numero strong {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    line-height: 1;
+    font-weight: 600;
+    display: block;
+    color: inherit;
+}
+.dia-info { flex: 1; min-width: 0; }
+.dia-fecha {
+    display: block;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--clr-gray);
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+.dia-titulo {
+    color: var(--clr-primary-blue);
+    font-size: 1.25rem;
+    margin: 0;
+    line-height: 1.3;
+    font-family: var(--font-sans);
+    font-weight: 600;
+}
+.dia-lectura {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--clr-primary-gold);
+    font-style: italic;
+    font-weight: 500;
+}
+.dia-toggle {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--clr-gray-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--clr-primary-blue);
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+.dia-toggle i { transition: transform 0.35s ease; }
+.dia-card.is-open .dia-toggle {
+    background: var(--clr-primary-blue);
+    color: var(--clr-white);
+}
+.dia-card.is-open .dia-toggle i { transform: rotate(180deg); }
+
+/* CONTENIDO desplegable */
+.dia-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s cubic-bezier(0.25,0.8,0.25,1);
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+}
+.dia-card.is-open .dia-content {
+    max-height: 6000px;
+    padding: 0 1.8rem 2rem;
+}
+.dia-imagen {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 160px;
+    align-self: start;
+}
+.dia-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+}
+.dia-cuerpo {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+.dia-section h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.05rem;
+    color: var(--clr-primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--clr-pale-blue);
+}
+.dia-section h4 i {
+    width: 18px; height: 18px;
+    color: var(--clr-primary-gold);
+}
+.dia-section p {
+    color: var(--clr-dark);
+    line-height: 1.75;
+    margin-bottom: 0.9rem;
+    font-size: 1rem;
+}
+.dia-section .cita {
+    font-style: italic;
+    color: var(--clr-primary-gold);
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    font-size: 1.15rem;
+}
+.dia-section blockquote {
+    background: linear-gradient(135deg, rgba(112,184,223,0.08), rgba(26,62,130,0.05));
+    border-left: 4px solid var(--clr-primary-blue);
+    padding: 1.6rem 1.8rem;
+    border-radius: 0 12px 12px 0;
+    margin: 0.6rem 0;
+    font-family: 'Inter', var(--font-sans);
+    font-size: 1.2rem;
+    line-height: 1.75;
+    color: var(--clr-dark);
+    font-style: italic;
+}
+.dia-section blockquote p {
+    font-family: inherit;
+    margin-bottom: 0.8rem;
+    font-size: inherit;
+    line-height: inherit;
+}
+.dia-section blockquote p:last-child { margin-bottom: 0; }
+.dia-section blockquote p::before {
+    content: '“';
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--clr-primary-gold);
+    line-height: 0;
+    vertical-align: -0.4em;
+    margin-right: 0.2rem;
+}
+
+.oracion p {
+    background: linear-gradient(135deg, rgba(240,196,61,0.06), transparent);
+    padding: 1rem 1.2rem;
+    border-radius: 10px;
+    border-left: 3px solid var(--clr-primary-gold);
+    font-size: 1.02rem;
+    color: var(--clr-dark);
+}
+
+.common-link {
+    background: var(--clr-gray-light);
+    padding: 1rem 1.3rem;
+    border-radius: 10px;
+    text-align: center;
+}
+.common-link p {
+    margin: 0;
+    color: var(--clr-gray);
+    font-size: 0.95rem;
+}
+.common-link a {
+    color: var(--clr-primary-blue);
+    font-weight: 600;
+    border-bottom: 2px solid var(--clr-primary-gold);
+}
+
+/* --- ORACIONES COMUNES --- */
+.oraciones-comunes .oracion-bloque {
+    background: var(--clr-white);
+    padding: 2rem 2.2rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1.5rem;
+    border-top: 4px solid var(--clr-primary-blue);
+}
+.oraciones-comunes .oracion-bloque h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--clr-primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+.oraciones-comunes .oracion-bloque h3 i {
+    width: 22px; height: 22px;
+    color: var(--clr-primary-gold);
+}
+.oraciones-comunes .oracion-bloque p {
+    color: var(--clr-dark);
+    line-height: 1.75;
+    font-size: 1rem;
+}
+.gozos-toggle summary {
+    cursor: pointer;
+    color: var(--clr-primary-blue);
+    font-weight: 600;
+    padding: 0.6rem 1rem;
+    background: var(--clr-gray-light);
+    border-radius: 8px;
+    list-style: none;
+    display: inline-block;
+    transition: var(--transition);
+}
+.gozos-toggle summary:hover { background: var(--clr-primary-blue); color: var(--clr-white); }
+.gozos-toggle summary::-webkit-details-marker { display: none; }
+.gozos-content {
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+    background: var(--clr-gray-light);
+    border-radius: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+.gozos-content p {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px dashed rgba(0,0,0,0.08);
+}
+.gozos-content p:last-child { border-bottom: none; }
+
+/* --- CONSAGRACIÓN --- */
+.seccion-consagracion {
+    background: linear-gradient(135deg, var(--clr-pale-blue) 0%, var(--clr-gray-light) 100%);
+    text-align: center;
+}
+
+/* --- NAV ITEM Novena (píldora azul-dorada) --- */
+.nav-novena {
+    color: var(--clr-white) !important;
+    text-shadow: none !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    background: linear-gradient(120deg, #1A3E82 0%, #2557C7 50%, #1A3E82 100%);
+    background-size: 200% auto;
+    border-radius: 50px;
+    padding: 0.45rem 1.1rem !important;
+    border: 1.5px solid var(--clr-primary-gold);
+    box-shadow: 0 0 10px rgba(240,196,61,0.4);
+    animation: novena-shimmer 4s linear infinite;
+    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+@keyframes novena-shimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+.nav-novena:hover {
+    transform: translateY(-2px) scale(1.04) !important;
+    box-shadow: 0 6px 18px rgba(26,62,130,0.5), 0 0 14px rgba(240,196,61,0.6) !important;
+    color: var(--clr-primary-gold) !important;
+}
+.nav-novena::after { display: none !important; }
+.navbar.scrolled .nav-novena { color: var(--clr-white) !important; }
+
+@media (max-width: 768px) {
+    .nav-novena {
+        margin: 0.4rem auto;
+        padding: 0.55rem 1.1rem !important;
+        font-size: 0.85rem !important;
+        display: inline-block;
+        white-space: normal;
+        text-align: center;
+        max-width: 90%;
+    }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .dia-content { grid-template-columns: 1fr; gap: 1.2rem; }
+    .dia-imagen {
+        position: static;
+        max-height: none;
+        max-width: 360px;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .dia-imagen img { aspect-ratio: 3/4; height: auto; object-fit: cover; }
+}
+
+@media (max-width: 768px) {
+    /* HERO móvil */
+    .novena-hero { min-height: 60vh !important; padding-top: 90px; }
+    .novena-hero .hero-content { padding: 0 1rem; }
+    .novena-hero .hero-title span { font-size: 2.6rem !important; line-height: 1.05; }
+    .novena-hero .hero-description { font-size: 1rem; margin-bottom: 1.5rem; }
+    .novena-hero .hero-actions { flex-direction: column; gap: 0.8rem; align-items: center; }
+    .novena-hero .hero-actions .btn-primary,
+    .novena-hero .hero-actions .btn-secondary {
+        width: 100%;
+        max-width: 280px;
+        font-size: 0.95rem;
+        padding: 0.8rem 1.2rem;
+    }
+
+    /* INTRO */
+    .novena-intro .intro-card { padding: 2rem 1.2rem; }
+    .novena-intro p { font-size: 1rem; }
+    .aviso-pentecostes { font-size: 0.9rem; padding: 0.9rem 1rem; gap: 0.7rem; }
+
+    /* BARRA DÍA ACTUAL */
+    .dia-actual-bar {
+        position: static;
+        top: auto;
+        padding: 0.8rem 0;
+    }
+    .dia-actual-bar .bar-inner {
+        font-size: 0.9rem;
+        gap: 0.6rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    .dia-actual-bar .btn-primary { width: auto; }
+
+    /* DÍA CARD móvil */
+    .dia-card { scroll-margin-top: 90px; }
+    .dia-header { padding: 1.1rem 0.9rem; gap: 0.5rem; }
+    .dia-header-left { gap: 0.8rem; }
+    .dia-numero { min-width: 54px; padding: 0.35rem 0.5rem; }
+    .dia-numero span { font-size: 0.6rem; letter-spacing: 1px; }
+    .dia-numero strong { font-size: 1.5rem; }
+    .dia-titulo { font-size: 0.95rem; line-height: 1.25; }
+    .dia-fecha { font-size: 0.65rem; letter-spacing: 1px; margin-bottom: 0.2rem; }
+    .dia-lectura { font-size: 0.72rem; margin-top: 0.25rem; }
+    .dia-toggle { width: 32px; height: 32px; }
+    .dia-toggle i { width: 16px; height: 16px; }
+
+    .dia-card.is-open .dia-content { padding: 0 0.9rem 1.4rem; }
+    .dia-imagen { max-width: 280px; margin: 0 auto 0.6rem; }
+    .dia-imagen img { aspect-ratio: 3/4; object-fit: cover; }
+
+    .dia-section h4 { font-size: 0.85rem; letter-spacing: 1px; }
+    .dia-section p { font-size: 0.95rem; }
+    .dia-section .cita { font-size: 1rem; }
+    .dia-section blockquote {
+        font-size: 1rem;
+        padding: 1.1rem 1.1rem;
+        line-height: 1.6;
+    }
+    .oracion p { font-size: 0.95rem; padding: 0.85rem 1rem; }
+    .common-link { padding: 0.8rem 1rem; }
+    .common-link p { font-size: 0.85rem; }
+
+    /* ORACIONES COMUNES */
+    .oraciones-comunes .oracion-bloque { padding: 1.4rem 1.1rem; }
+    .oraciones-comunes .oracion-bloque h3 { font-size: 1.1rem; }
+    .oraciones-comunes .oracion-bloque p { font-size: 0.95rem; }
+    .gozos-content { padding: 0.8rem; max-height: 300px; }
+    .gozos-content p { font-size: 0.88rem; }
+
+    /* CONSAGRACIÓN */
+    .seccion-consagracion p { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .novena-hero .hero-title span { font-size: 2.1rem !important; }
+    .novena-hero .hero-subtitle { font-size: 0.95rem; }
+    .dia-header { padding: 1rem 0.7rem; }
+    .dia-header-left { gap: 0.6rem; }
+    .dia-numero { min-width: 46px; }
+    .dia-numero strong { font-size: 1.3rem; }
+    .dia-titulo { font-size: 0.9rem; }
+    .dia-card.is-open .dia-content { padding: 0 0.7rem 1.2rem; }
+    .dia-section blockquote { padding: 0.9rem 0.9rem; font-size: 0.95rem; }
+    .dia-imagen { max-width: 240px; }
+}

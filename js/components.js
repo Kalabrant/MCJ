@@ -1,4 +1,10 @@
 class AppHeader extends HTMLElement {
+    // Píldora visible desde ya y hasta el 25 de mayo 2026 (día de la solemnidad)
+    static novenaActiva() {
+        const hoy = new Date();
+        const hasta = new Date(2026, 4, 25, 23, 59); // 25 mayo (solemnidad)
+        return hoy <= hasta;
+    }
     connectedCallback() {
         const base = this.getAttribute('base-path') || './';
         this.innerHTML = `
@@ -10,6 +16,7 @@ class AppHeader extends HTMLElement {
                     <span class="logo-text">María Camino a Jesús</span>
                 </a>
                 <div class="nav-links">
+                    ${AppHeader.novenaActiva() ? `<a href="${base}novena.html" class="nav-novena">🌹 Novena a María Auxiliadora</a>` : ''}
                     <a href="${base}fiestamisericordia.html" class="nav-fiesta">✨ Fiesta de la Misericordia 2026</a>
                     <a href="${base}informativa/quienes-somos.html">Nosotros</a>
                     <a href="${base}informativa/obras.html">Obras</a>
@@ -43,6 +50,7 @@ class AppFooter extends HTMLElement {
                 </div>
                 <div class="footer-links">
                     <h4>Navegación</h4>
+                    ${AppHeader.novenaActiva() ? `<a href="${base}novena.html" style="color: var(--clr-primary-gold); font-weight: 700;">🌹 Novena a María Auxiliadora</a>` : ''}
                     <a href="${base}fiestamisericordia.html" style="color: var(--clr-primary-gold); font-weight: 700;">✨ Fiesta de la Misericordia 2026</a>
                     <a href="${base}informativa/quienes-somos.html">Nosotros</a>
                     <a href="${base}informativa/obras.html">Obras</a>

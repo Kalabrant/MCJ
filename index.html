@@ -50,6 +50,21 @@
             <div class="container" style="max-width: 1300px;">
                 <div class="marcha-content slide-in-up delay-1"
                     style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <!-- Novena (visible solo durante novena+solemnidad) -->
+                    <div class="marcha-card text-center" id="cardNovena" style="display:none; border-top: 5px solid var(--clr-primary-gold); background: linear-gradient(180deg, #fff 0%, rgba(240,196,61,0.08) 100%);">
+                        <i data-lucide="flower"
+                            style="width:50px; height:50px; color:var(--clr-primary-gold); margin-bottom: 1rem;"></i>
+                        <h3>Novena a María Auxiliadora</h3>
+                        <p style="margin-bottom: 1.5rem;">Del 16 al 24 de mayo. Únete cada día a esta novena de preparación.</p>
+                        <a href="novena.html" class="btn-primary"
+                            style="font-size: 0.9rem; padding: 0.6rem 1.2rem; background: var(--clr-primary-gold); color: var(--clr-dark); margin-top: auto;">Rezar hoy</a>
+                    </div>
+                    <script>
+                      (function(){
+                        var hoy=new Date(), h=new Date(2026,4,25,23,59);
+                        if(hoy<=h){ var c=document.getElementById('cardNovena'); if(c){ c.style.display='flex'; c.style.flexDirection='column'; } }
+                      })();
+                    </script>
                     <!-- Informativa -->
                     <div class="marcha-card text-center" style="border-top: 5px solid var(--clr-primary-blue);">
                         <i data-lucide="church"
